@@ -21,11 +21,18 @@ export function middleware(request: NextRequest) {
   headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
 
   // Content Security Policy
-  const isDevelopment = process.env.NODE_ENV === 'development';
+  const scriptSrc = [
+    "'self'",
+    "'unsafe-eval'",
+    "'unsafe-inline'",
+    "https://www.google.com",
+    "https://www.gstatic.com",
+    "https://www.googletagmanager.com",
+  ].join(' ');
 
   const csp = [
     "default-src 'self'",
-    `script-src 'self' 'unsafe-eval' ${isDevelopment ? "'unsafe-inline'" : ''} https://www.google.com https://www.gstatic.com https://www.googletagmanager.com`,
+    `script-src ${scriptSrc}`,
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "font-src 'self' https://fonts.gstatic.com data:",
     "img-src 'self' data: https: blob:",
