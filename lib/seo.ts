@@ -104,7 +104,7 @@ export function generateLocalBusinessSchema() {
     description: siteConfig.description,
     url: siteConfig.url,
     logo: getSiteUrl(siteConfig.images.logo),
-    image: getSiteUrl(siteConfig.images.ogImage.url),
+    image: getSiteUrl(siteConfig.images.logo),
     priceRange: siteConfig.business.priceRange,
     telephone: siteConfig.contact.phones[0].number,
     email: siteConfig.contact.email,
