@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Precios de Lavandería",
+    "description": "Tarifas transparentes para el lavado de tus prendas. Calidad profesional a precios justos."
+  },
+  "features": [
+    {
+      "id": "transparencia",
+      "title": "Precios Transparentes",
+      "description": "Sin costos ocultos. Los precios mostrados son finales e incluyen lavado y secado profesional."
+    },
+    {
+      "id": "descuentos",
+      "title": "Descuentos por Volumen",
+      "description": "Consulta por descuentos especiales si traes múltiples prendas o eres cliente frecuente."
+    },
+    {
+      "id": "express",
+      "title": "Servicio Express",
+      "description": "¿Necesitas tus prendas urgente? Pregunta por nuestro servicio express con entrega el mismo día."
+    }
+  ],
+  "cta": {
+    "question": "¿Tienes preguntas sobre nuestros precios o servicios?",
+    "buttonText": "Contáctanos",
+    "buttonLink": "/#contacto"
+  }
+}

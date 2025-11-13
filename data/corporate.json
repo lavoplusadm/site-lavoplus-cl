@@ -1,0 +1,82 @@
+{
+  "title": "Convenios con Empresas",
+  "subtitle": "Soluciones Corporativas",
+  "description": "Soluciones de lavandería profesional a medida para tu negocio. Mejora la imagen de tu empresa con nuestro servicio especializado.",
+  "benefits": [
+    {
+      "id": "tarifas",
+      "title": "Tarifas Preferenciales",
+      "description": "Descuentos especiales por volumen para tu empresa. Mientras más utilizas el servicio, más ahorras."
+    },
+    {
+      "id": "facturacion",
+      "title": "Facturación Mensual",
+      "description": "Recibe una sola factura al mes con el detalle de todos los servicios utilizados por tu empresa."
+    },
+    {
+      "id": "recogida",
+      "title": "Recogida Programada",
+      "description": "Establecemos un calendario de recogidas regular en tu empresa. Mismo día, misma hora cada semana."
+    },
+    {
+      "id": "servicio-dedicado",
+      "title": "Servicio Dedicado",
+      "description": "Ejecutivo de cuenta asignado para atender las necesidades específicas de tu empresa."
+    },
+    {
+      "id": "uniformes",
+      "title": "Lavado de Uniformes",
+      "description": "Especialistas en lavado y mantenimiento de uniformes corporativos, médicos, industriales y más."
+    },
+    {
+      "id": "reportes",
+      "title": "Reportes Mensuales",
+      "description": "Acceso a reportes detallados de consumo y uso del servicio para control de tu empresa."
+    }
+  ],
+  "idealFor": [
+    {
+      "icon": "🏥",
+      "title": "Clínicas y Hospitales",
+      "description": "Uniformes médicos, batas, sábanas y toallas"
+    },
+    {
+      "icon": "🏨",
+      "title": "Hoteles y Restaurantes",
+      "description": "Mantelería, uniformes, sábanas y toallas"
+    },
+    {
+      "icon": "🏢",
+      "title": "Oficinas Corporativas",
+      "description": "Uniformes, cortinas y textiles de oficina"
+    },
+    {
+      "icon": "🏋️",
+      "title": "Gimnasios y Spa",
+      "description": "Toallas, uniformes y textiles deportivos"
+    },
+    {
+      "icon": "🏗️",
+      "title": "Industrias",
+      "description": "Uniformes industriales y equipos de protección"
+    },
+    {
+      "icon": "🏫",
+      "title": "Colegios e Instituciones",
+      "description": "Uniformes escolares y textiles institucionales"
+    }
+  ],
+  "cta": {
+    "title": "¿Listo para Optimizar tu Servicio de Lavandería?",
+    "description": "Agenda una reunión con nuestro equipo corporativo y descubre cómo podemos ayudarte. Sin compromiso, cotización gratuita.",
+    "whatsapp": {
+      "text": "Solicitar Cotización",
+      "message": "Hola, quiero información sobre convenios empresariales"
+    },
+    "email": {
+      "text": "Enviar Email",
+      "address": "empresas@lavoplus.com"
+    },
+    "responseTime": "Respuesta en menos de 24 horas hábiles"
+  }
+}

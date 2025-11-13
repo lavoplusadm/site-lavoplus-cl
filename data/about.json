@@ -1,0 +1,38 @@
+{
+  "title": "Somos Lavoplus",
+  "subtitle": "Tu aliado de confianza en lavandería profesional",
+  "description": "Nacimos como una lavandería familiar en Los Ángeles con la idea de entregar un servicio cercano, confiable y puntual. Hoy combinamos procesos industriales, productos premium y un equipo especializado para cuidar cada prenda como si fuera nuestra.",
+  "highlights": [
+    {
+      "id": "experiencia",
+      "title": "+5 años de experiencia",
+      "description": "Procesamos cientos de pedidos al mes para hogares, empresas y comercios de la región."
+    },
+    {
+      "id": "calidad",
+      "title": "Calidad certificada",
+      "description": "Utilizamos detergentes biodegradables, agua tratada y protocolos de control en cada etapa."
+    },
+    {
+      "id": "proposito",
+      "title": "Servicio cercano",
+      "description": "Coordinamos retiros y entregas adaptados a los horarios de nuestros clientes."
+    }
+  ],
+  "mission": {
+    "title": "Nuestra misión",
+    "description": "Ofrecer soluciones de lavandería confiables y accesibles que liberen tiempo a nuestros clientes, asegurando la máxima higiene y prolongando la vida útil de cada prenda."
+  },
+  "vision": {
+    "title": "Nuestra visión",
+    "description": "Ser la red de lavanderías preferida del sur de Chile, reconocida por la innovación en procesos, la sustentabilidad y la experiencia de servicio memorable."
+  },
+  "photo": {
+    "src": "/banner/lavado-premium.webp",
+    "alt": "Equipo de Lavoplus trabajando en la planta de lavado"
+  },
+  "storePhoto": {
+    "src": "/img/lavoplus-tienda.webp",
+    "alt": "Fachada de la tienda Lavoplus en Los Ángeles"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "note": "Los datos de contacto (dirección, teléfono, email, horarios) y la lista de servicios están centralizados en business.json",
+  "useBusinessData": true,
+  "title": "Contáctanos",
+  "subtitle": "Hablemos",
+  "description": "Estamos listos para atender tus necesidades de lavandería",
+  "form": {
+    "title": "Solicita Información",
+    "fields": {
+      "name": {
+        "label": "Nombre Completo",
+        "placeholder": "Ingresa tu nombre completo",
+        "required": true
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "tu@email.com",
+        "required": true
+      },
+      "phone": {
+        "label": "Teléfono",
+        "required": true
+      },
+      "service": {
+        "label": "Servicio de Interés",
+        "placeholder": "Selecciona un servicio",
+        "required": true,
+        "options": [
+          {
+            "value": "lavado-kilo",
+            "label": "Lavado por Kilo"
+          },
+          {
+            "value": "lavado-seco",
+            "label": "Lavado en Seco"
+          },
+          {
+            "value": "planchado",
+            "label": "Planchado"
+          },
+          {
+            "value": "ropa-cama",
+            "label": "Lavado de Ropa Cama"
+          },
+          {
+            "value": "express",
+            "label": "Servicio Express"
+          },
+          {
+            "value": "otro",
+            "label": "Otro servicio"
+          }
+        ]
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Cuéntanos cómo podemos ayudarte...",
+        "required": false
+      }
+    },
+    "submitButton": "Enviar Mensaje",
+    "successMessage": {
+      "title": "¡Mensaje Enviado!",
+      "description": "Nos pondremos en contacto contigo pronto."
+    }
+  },
+  "contactInfo": {
+    "title": "Información de Contacto"
+  },
+  "callToAction": {
+    "title": "Horario de Atención",
+    "description": "Visítanos o llámanos durante nuestro horario de atención. Ofrecemos servicio express para tus emergencias.",
+    "buttonText": "Llamar Ahora"
+  }
+}

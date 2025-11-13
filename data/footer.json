@@ -1,0 +1,16 @@
+{
+  "note": "La mayoría de los datos del footer (logo, enlaces, servicios, contacto, redes sociales, copyright) están centralizados en business.json",
+  "useBusinessData": true,
+  "brand": {
+    "description": "Tu lavandería de confianza con más de 5 años de experiencia brindando servicios de calidad."
+  },
+  "quickLinks": {
+    "title": "Enlaces Rápidos"
+  },
+  "services": {
+    "title": "Servicios"
+  },
+  "contact": {
+    "title": "Contacto"
+  }
+}

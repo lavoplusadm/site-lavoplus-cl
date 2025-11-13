@@ -1,0 +1,104 @@
+{
+  "name": "Lavandería Lavoplus",
+  "slogan": "Tu ropa impecable, nuestra pasión",
+  "description": "Lavandería profesional en Los Ángeles, Región del Bío Bío, con más de 5 años de experiencia. Cuidamos cada prenda como si fuera nuestra, utilizando productos de primera calidad.",
+  "yearsOfExperience": 5,
+  "address": {
+    "street": "C. Monte Perdido 1496",
+    "city": "Los Ángeles",
+    "region": "Región del Bío Bío",
+    "country": "Chile",
+    "postalCode": "4440000",
+    "full": "C. Monte Perdido 1496\nLos Ángeles, Región del Bío Bío, Chile"
+  },
+  "contact": {
+    "phone": "+56996834618",
+    "phoneDisplay": "+56 9 9683 4618",
+    "phoneLink": "tel:+56996834618",
+    "email": "lavanderia@lavoplus.com",
+    "emailCorporate": "empresas@lavoplus.com"
+  },
+  "hours": {
+    "weekdays": {
+      "days": "Lunes a Viernes",
+      "hours": "7:00 AM - 8:00 PM"
+    },
+    "saturday": {
+      "days": "Sábado",
+      "hours": "8:00 AM - 6:00 PM"
+    },
+    "sunday": {
+      "days": "Domingo",
+      "hours": "9:00 AM - 2:00 PM"
+    },
+    "formatted": [
+      "Lunes a Viernes: 7:00 AM - 8:00 PM",
+      "Sábado: 8:00 AM - 6:00 PM",
+      "Domingo: 9:00 AM - 2:00 PM"
+    ]
+  },
+  "coordinates": {
+    "latitude": -37.4476508,
+    "longitude": -72.331502
+  },
+  "social": {
+    "facebook": "#",
+    "instagram": "#",
+    "whatsapp": "https://wa.me/56996834618"
+  },
+  "stats": {
+    "yearsExperience": "5+",
+    "satisfiedClients": "300+",
+    "satisfactionRate": "98%",
+    "customerSupport": "24/7"
+  },
+  "navigation": [
+    {
+      "id": "inicio",
+      "href": "#inicio",
+      "label": "Inicio"
+    },
+    {
+      "id": "servicios",
+      "href": "#servicios",
+      "label": "Servicios"
+    },
+    {
+      "id": "calidad",
+      "href": "#calidad",
+      "label": "Calidad"
+    },
+    {
+      "id": "testimonios",
+      "href": "#testimonios",
+      "label": "Testimonios"
+    },
+    {
+      "id": "contacto",
+      "href": "#contacto",
+      "label": "Contacto"
+    }
+  ],
+  "logo": {
+    "default": {
+      "src": "/img/logo-lavaplus-original.png",
+      "alt": "Lavandería Lavoplus",
+      "width": 600,
+      "height": 200
+    },
+    "white": {
+      "src": "/img/logo-lavaplus-original-blanco.png",
+      "alt": "Lavandería Lavoplus",
+      "width": 300,
+      "height": 100
+    }
+  },
+  "servicesList": [
+    "Lavado por Kilo",
+    "Lavado en Seco",
+    "Planchado",
+    "Lavado de Ropa Cama",
+    "Servicio Express"
+  ],
+  "copyright": "Lavandería Lavoplus. Todos los derechos reservados."
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Lo Que Dicen Nuestros Clientes",
+  "subtitle": "Testimonios",
+  "description": "La satisfacción de nuestros clientes es nuestro mejor respaldo",
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "María González",
+      "role": "Cliente Frecuente",
+      "text": "Excelente servicio! Mis prendas siempre quedan impecables y el aroma es increíble. La atención es muy personalizada y confiable.",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Carlos Ramírez",
+      "role": "Empresario",
+      "text": "Llevo mis trajes aquí desde hace años. El lavado en seco es perfecto y siempre están listos a tiempo. 100% recomendado.",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Ana Patricia López",
+      "role": "Ama de Casa",
+      "text": "El servicio express me salvó cuando necesitaba lavar plumone urgentemente. Quedaron perfectos y con un precio muy justo.",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "name": "Roberto Fernández",
+      "role": "Profesional",
+      "text": "Me encanta la calidad de los productos que usan. Mis camisas quedan perfectamente planchadas y las manchas siempre desaparecen.",
+      "rating": 5
+    }
+  ]
+}

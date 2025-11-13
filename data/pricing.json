@@ -1,0 +1,297 @@
+{
+  "categories": [
+    {
+      "id": "ropa-cama-bano",
+      "name": "Ropa de Cama y Baño",
+      "items": [
+        {
+          "id": "plumon-sintetico-1-1-5",
+          "name": "Plumón Sintético de 1 a 1.5",
+          "price": "5.990",
+          "priceX2": "9.990"
+        },
+        {
+          "id": "plumon-sintetico-2",
+          "name": "Plumón hasta 2 Plazas Sintético",
+          "price": "7.500",
+          "priceX2": "13.990"
+        },
+        {
+          "id": "plumon-king-sintetico",
+          "name": "Plumón King o Super King Sintético o Microfibra",
+          "price": "8.500",
+          "priceX2": "16.000"
+        },
+        {
+          "id": "plumon-1-1-5-pluma",
+          "name": "Plumón de 1 a 1.5 Pluma",
+          "price": "9.990",
+          "priceX2": "18.990"
+        },
+        {
+          "id": "plumon-2-pluma",
+          "name": "Plumón hasta 2 Plazas Pluma",
+          "price": "10.990",
+          "priceX2": "19.990"
+        },
+        {
+          "id": "plumon-king-pluma",
+          "name": "Plumón Pluma King o Super King",
+          "price": "11.990",
+          "priceX2": "22.990"
+        },
+        {
+          "id": "cobertor-sherpa-1-5",
+          "name": "Cobertor Sherpa hasta 1 a 1.5 Plazas",
+          "price": "5.990",
+          "priceX2": "9.990"
+        },
+        {
+          "id": "cobertor-sherpa-2",
+          "name": "Cobertor Sherpa hasta 2 Plazas",
+          "price": "6.990",
+          "priceX2": "12.990"
+        },
+        {
+          "id": "almohadas-sinteticas",
+          "name": "Almohadas Sintéticas",
+          "price": "3.000"
+        },
+        {
+          "id": "almohadas-pluma",
+          "name": "Almohadas Pluma",
+          "price": "5.000"
+        },
+        {
+          "id": "colchas-desde",
+          "name": "Colchas Desde",
+          "price": "4.500"
+        },
+        {
+          "id": "frazadas-1-1-5",
+          "name": "Frazadas 1 y 1.5",
+          "price": "4.000"
+        },
+        {
+          "id": "frazadas-2",
+          "name": "Frazadas 2 Plazas",
+          "price": "5.000",
+          "priceX2": "9.000"
+        },
+        {
+          "id": "juego-sabanas-2-king",
+          "name": "Juego de Sábanas 2 Plazas o King",
+          "price": "5.000",
+          "note": "X Kilo $2.500"
+        },
+        {
+          "id": "juego-sabanas-1-1-5",
+          "name": "Juego de Sábanas 1 o 1.5",
+          "price": "4.000",
+          "note": "X Kilo $2.500"
+        },
+        {
+          "id": "toalla-mano",
+          "name": "Toalla Mano",
+          "price": "1.000",
+          "note": "X Kilo $2.500"
+        },
+        {
+          "id": "toalla-grande",
+          "name": "Toalla Grande",
+          "price": "2.000",
+          "note": "X Kilo $2.500"
+        }
+      ]
+    },
+    {
+      "id": "ropa-casual",
+      "name": "Ropa Casual",
+      "items": [
+        {
+          "id": "camisa",
+          "name": "Camisa",
+          "price": "2.000",
+          "image": "/products/camisa.webp",
+          "note": "Con planchado +$500"
+        },
+        {
+          "id": "abrigo-corto",
+          "name": "Abrigo Corto",
+          "price": "4.500",
+          "image": "/products/abrigo.webp"
+        },
+        {
+          "id": "abrigo-largo",
+          "name": "Abrigo Largo",
+          "price": "5.000",
+          "image": "/products/abrigo-largo.webp"
+        },
+        {
+          "id": "blazer-corto",
+          "name": "Blazer Corto",
+          "price": "5.500",
+          "image": "/products/blazer.webp"
+        },
+        {
+          "id": "blazer-largo",
+          "name": "Blazer Largo",
+          "price": "6.500",
+          "image": "/products/blazer-largo.webp"
+        },
+        {
+          "id": "falda",
+          "name": "Falda",
+          "price": "4.000",
+          "image": "/products/falda.webp"
+        },
+        {
+          "id": "polar",
+          "name": "Polar",
+          "price": "5.000",
+          "image": "/products/polar.webp"
+        },
+        {
+          "id": "polerones",
+          "name": "Polerones",
+          "price": "2.500",
+          "image": "/products/poleron.webp"
+        },
+        {
+          "id": "pantalones",
+          "name": "Pantalones",
+          "price": "2.700",
+          "image": "/products/pantalon.webp"
+        }
+      ]
+    },
+    {
+      "id": "ropa-outdoor",
+      "name": "Ropa Outdoor (de Montaña)",
+      "items": [
+        {
+          "id": "parka-pluma",
+          "name": "Parka Pluma",
+          "price": "7.500",
+          "priceX2": "14.000",
+          "image": "/products/parka-plumas.webp"
+        },
+        {
+          "id": "parka-pluma-sin-mangas",
+          "name": "Parka Pluma sin Mangas",
+          "price": "6.000",
+          "priceX2": "11.000",
+          "image": "/products/parka-pluma-sin-mangas.webp"
+        },
+        {
+          "id": "parka-pluma-larga",
+          "name": "Parka Pluma Larga",
+          "price": "8.990",
+          "priceX2": "16.000",
+          "image": "/products/parka-pluma-larga.webp"
+        },
+        {
+          "id": "parka-pluma-nino",
+          "name": "Parka Pluma Niño/Niña",
+          "price": "5.000",
+          "image": "/products/parka-pluma-nino.webp"
+        },
+        {
+          "id": "parka-sintetica",
+          "name": "Parka Sintética",
+          "price": "6.000",
+          "image": "/products/parka-sintetica.webp"
+        },
+        {
+          "id": "parka-sintetica-larga",
+          "name": "Parka Sintética Larga",
+          "price": "7.000",
+          "image": "/products/parka-sintetica-larga.webp"
+        }
+      ]
+    },
+    {
+      "id": "trajes-fiesta",
+      "name": "Trajes de Fiesta",
+      "items": [
+        {
+          "id": "vestido-novia-simple",
+          "name": "Vestido Novia Simple",
+          "price": "17.000"
+        },
+        {
+          "id": "vestido-novia-falso",
+          "name": "Vestido Novia con Falso o Camillo",
+          "price": "25.000"
+        },
+        {
+          "id": "veston",
+          "name": "Vestón",
+          "price": "5.500"
+        },
+        {
+          "id": "vestido-fiesta",
+          "name": "Vestido de Fiesta",
+          "price": "6.500",
+          "image": "/products/vestido.webp"
+        },
+        {
+          "id": "vestido-huasa",
+          "name": "Vestido Huasa",
+          "price": "6.000"
+        },
+        {
+          "id": "lenceria",
+          "name": "Lencería",
+          "price": "5.000"
+        }
+      ]
+    },
+    {
+      "id": "servicio-kilo",
+      "name": "Servicio por Kilo",
+      "items": [
+        {
+          "id": "servicio-completo-kilo",
+          "name": "Servicio Completo x Kilo",
+          "price": "2.500"
+        },
+        {
+          "id": "lavado-secado-kilo",
+          "name": "Lavado + Secado x Kilo",
+          "price": "5500"
+        },
+        {
+          "id": "secado-kilo",
+          "name": "Secado x Kilo",
+          "price": "1.400"
+        },
+        {
+          "id": "sabanas-kilo",
+          "name": "Sábanas x Kilo",
+          "price": "2.500"
+        },
+        {
+          "id": "toallas-kilo",
+          "name": "Toallas x Kilo",
+          "price": "2.500"
+        },
+        {
+          "id": "manteles-kilo",
+          "name": "Manteles x Kilo",
+          "price": "3.000"
+        },
+        {
+          "id": "cortinas-kilo",
+          "name": "Cortinas x Kilo",
+          "price": "2.700"
+        },
+        {
+          "id": "planchado-camisas-kilo",
+          "name": "Planchado Camisas x Kilo",
+          "price": "2.000"
+        }
+      ]
+    }
+  ]
+}

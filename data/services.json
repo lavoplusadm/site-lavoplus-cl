@@ -1,0 +1,76 @@
+{
+  "services": [
+    {
+      "id": "lavado-kilo",
+      "title": "Lavado por Kilo",
+      "description": "Lavado tradicional de ropa por kilogramo. Ideal para prendas del día a día.",
+      "price": "1.950",
+      "priceUnit": "por kilo",
+      "features": [
+        "Lavado con detergentes premium",
+        "Suavizante de alta calidad",
+        "Secado incluido",
+        "Doblado",
+        "Planchado (opcional)"
+      ],
+      "note": "* Peso mínimo 3 kilos"
+    },
+    {
+      "id": "lavado-seco",
+      "title": "Lavado en Seco",
+      "description": "Servicio especializado para prendas delicadas que requieren cuidado especial.",
+      "price": "5.500",
+      "priceUnit": "por prenda",
+      "features": [
+        "Limpieza sin agua",
+        "Ideal para trajes y vestidos",
+        "Protección de colores",
+        "Cuidado de tejidos delicados"
+      ]
+    },
+    {
+      "id": "planchado",
+      "title": "Planchado",
+      "description": "Servicio de planchado profesional para que tus prendas luzcan impecables.",
+      "price": "2.500",
+      "priceUnit": "por prenda",
+      "features": [
+        "Planchado a vapor",
+        "Acabado profesional",
+        "Atención al detalle",
+        "Entrega en perchas"
+      ]
+    },
+    {
+      "id": "lavado-ropa-cama",
+      "title": "Lavado de Ropa Cama",
+      "description": "Lavado especializado para plumones, cobijas y prendas de gran tamaño.",
+      "price": "4.990",
+      "priceUnit": "por pieza",
+      "features": [
+        "Equipos industriales",
+        "Secado completo garantizado",
+        "Eliminación de ácaros",
+        "Productos hipoalergénicos"
+      ]
+    },
+    {
+      "id": "servicio-express",
+      "title": "Servicio Express",
+      "description": "¿Tienes prisa? Ofrecemos servicio de lavado y entrega el mismo día.",
+      "price": "7.500",
+      "priceUnit": "por kilo",
+      "features": [
+        "Entrega en 6-8 horas",
+        "Disponible de lunes a sábado",
+        "Mismo proceso de calidad",
+        "Cargo adicional mínimo"
+      ]
+    }
+  ],
+  "specialServices": {
+    "title": "¿Necesitas un servicio especial?",
+    "description": "Tratamos parkas de pluma, prendas de gala, vestidos de novia, uniformes empresariales y textiles delicados con procesos dedicados.",
+    "ctaText": "Hablemos de tu proyecto"
+  }
+}

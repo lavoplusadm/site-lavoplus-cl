@@ -1,0 +1,56 @@
+{
+  "title": "Llevamos tu Ropa Limpia a Casa",
+  "subtitle": "Servicio de Delivery",
+  "description": "Ahorra tiempo con nuestro servicio de recogida y entrega a domicilio. Sin salir de casa, tu ropa estará impecable.",
+  "features": [
+    {
+      "id": "recogida",
+      "title": "Recogida a Domicilio",
+      "description": "Pasamos a recoger tu ropa directamente en tu hogar u oficina en el horario que prefieras."
+    },
+    {
+      "id": "entrega",
+      "title": "Entrega Programada",
+      "description": "Recibe tu ropa limpia en la fecha y hora que mejor te acomode. Confirmamos el día anterior."
+    },
+    {
+      "id": "seguimiento",
+      "title": "Seguimiento en Tiempo Real",
+      "description": "Notificaciones por WhatsApp del estado de tu pedido: recogida, proceso y entrega."
+    },
+    {
+      "id": "cobertura",
+      "title": "Cobertura Amplia",
+      "description": "Servicio disponible en Los Ángeles y comunas cercanas. Consulta si llegamos a tu sector."
+    }
+  ],
+  "process": [
+    {
+      "step": "1",
+      "title": "Agenda tu Recogida",
+      "description": "Contáctanos por WhatsApp o teléfono y programa el día y hora de recogida."
+    },
+    {
+      "step": "2",
+      "title": "Preparamos tu Pedido",
+      "description": "Recogemos tu ropa, la pesamos y te enviamos el presupuesto al instante."
+    },
+    {
+      "step": "3",
+      "title": "Lavado Profesional",
+      "description": "Tu ropa es procesada con nuestros estándares de calidad premium."
+    },
+    {
+      "step": "4",
+      "title": "Entrega a Domicilio",
+      "description": "Llevamos tu ropa limpia, doblada y lista para usar cuando la necesites."
+    }
+  ],
+  "cta": {
+    "title": "¡Programa tu Primer Delivery Gratis!",
+    "description": "Sin cargo adicional en tu primera recogida y entrega. Solo pagas el servicio de lavandería.",
+    "buttonText": "Solicitar Delivery Ahora",
+    "whatsappMessage": "Hola, quiero programar mi primer delivery gratis",
+    "availability": "Disponible de lunes a sábado de 9:00 a 19:00 hrs"
+  }
+}

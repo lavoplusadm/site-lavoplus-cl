@@ -1,0 +1,37 @@
+# robots.txt para Lavandería Lavoplus
+# https://lavoplus.cl
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/static/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://lavoplus.cl/sitemap.xml
+
+# Rastreadores específicos permitidos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawl-delay para bots
+Crawl-delay: 1
+
+# Disallow para bots maliciosos
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

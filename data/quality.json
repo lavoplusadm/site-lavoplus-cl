@@ -1,0 +1,50 @@
+{
+  "title": "Calidad en Cada Detalle",
+  "subtitle": "Nuestro Compromiso",
+  "description": "Nos comprometemos a ofrecer el mejor servicio utilizando únicamente insumos de primera calidad",
+  "qualities": [
+    {
+      "id": "detergentes",
+      "title": "Detergentes Premium",
+      "description": "Utilizamos únicamente detergentes de las mejores marcas, biodegradables y dermatológicamente probados. Protegen tus prendas mientras cuidan el medio ambiente."
+    },
+    {
+      "id": "suavizantes",
+      "title": "Suavizantes de Alta Calidad",
+      "description": "Suavizantes hipoalergénicos que dejan tus prendas suaves, aromáticas y con fragancias duraderas. Especiales para pieles sensibles."
+    },
+    {
+      "id": "equipos",
+      "title": "Equipos de Última Generación",
+      "description": "Maquinaria industrial moderna que garantiza un lavado profundo y efectivo, mientras preserva la calidad de tus prendas."
+    },
+    {
+      "id": "agua",
+      "title": "Agua Tratada",
+      "description": "Sistema de filtración de agua que elimina impurezas y minerales que pueden dañar las telas, garantizando un lavado más limpio."
+    }
+  ],
+  "guarantees": [
+    "100% Satisfacción Garantizada",
+    "Productos Ecológicos",
+    "Sin Químicos Agresivos",
+    "Cuidado Especializado por Tipo de Prenda",
+    "Personal Capacitado",
+    "Procesos Certificados"
+  ],
+  "whyChooseUs": {
+    "title": "¿Por Qué Elegirnos?",
+    "description": "Combinamos tecnología de punta con productos premium y un equipo altamente capacitado para brindarte el mejor servicio de lavandería. Tu satisfacción y el cuidado de tus prendas son nuestra prioridad.",
+    "ctaText": "Solicita tu Servicio"
+  },
+  "detergentPromo": {
+    "headline": "¿Quieres lograr los mismos resultados en casa?",
+    "description": "Lleva nuestro detergente premium y disfruta en tu hogar la misma limpieza profunda, fragancia duradera y cuidado de tejidos que ofrecemos en Lavoplus. Una fórmula profesional pensada para tus lavados diarios.",
+    "image": {
+      "src": "/img/detergente-premium.webp",
+      "alt": "Detergente premium Lavoplus"
+    },
+    "ctaText": "Comprar por WhatsApp",
+    "ctaLink": "whatsapp"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "note": "Los datos de navegación y logo ahora están centralizados en business.json",
+  "useBusinessData": true
+}
