@@ -85,10 +85,10 @@ export const siteConfig = {
     logo: "/img/logo-lavaplus-original.png",
     logoBlue: "/img/logo-lavoplus-azul.png",
     ogImage: {
-      url: "/img/logo-lavaplus-original.png",
+      url: "/img/lavoplus-tienda.webp",
       width: 1200,
       height: 630,
-      alt: "Lavandería Lavoplus - Logo oficial",
+      alt: "Lavandería Lavoplus - Fachada y equipo",
     },
   },
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
@@ -17,17 +18,34 @@ const inter = Inter({
   adjustFontFallback: true, // Ajustar métricas de fuente fallback
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: `${siteConfig.name} Los Ángeles | Delivery & Convenios Empresariales`,
-    template: `%s | ${siteConfig.name} Los Ángeles`
-  },
-  description: siteConfig.description,
-  keywords: [...siteConfig.keywords],
+export async function generateMetadata(): Promise<Metadata> {
+  const headersList = headers();
+  const forwardedHost = headersList.get('x-forwarded-host');
+  const host = forwardedHost ?? headersList.get('host') ?? new URL(siteConfig.url).host;
+  const forwardedProto = headersList.get('x-forwarded-proto');
+  const protocol = forwardedProto ?? (host?.includes('localhost') || host?.includes('127.0.0.1') ? 'http' : 'https');
+  const baseUrl = `${protocol}://${host}`;
+
+  const metadataBase = new URL(baseUrl);
+  const defaultOgImage = {
+    url: `${siteConfig.url}${siteConfig.images.ogImage.url}`,
+    width: siteConfig.images.ogImage.width,
+    height: siteConfig.images.ogImage.height,
+    alt: siteConfig.images.ogImage.alt,
+    type: 'image/webp' as const,
+  };
+
+  return {
+    title: {
+      default: `${siteConfig.name} Los Ángeles | Delivery & Convenios Empresariales`,
+      template: `%s | ${siteConfig.name} Los Ángeles`
+    },
+    description: siteConfig.description,
+    keywords: [...siteConfig.keywords],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
-  metadataBase: new URL(siteConfig.url),
+    metadataBase,
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -47,36 +65,28 @@ export const metadata: Metadata = {
   },
   category: 'business',
   classification: 'Servicios de Lavandería',
-  openGraph: {
-    title: `${siteConfig.name} Los Ángeles | Delivery & Convenios Empresariales`,
+    openGraph: {
+      title: `${siteConfig.name} Los Ángeles | Delivery & Convenios Empresariales`,
     description: `Lavandería profesional en ${siteConfig.address.city}, ${siteConfig.address.region} con +${siteConfig.business.yearsOfExperience} años de experiencia. Servicio de delivery a domicilio y convenios corporativos. Lavado por kilo, lavado en seco, planchado.`,
     url: siteConfig.url,
     siteName: siteConfig.name,
     locale: "es_CL",
     type: "website",
-    images: [
-      {
-        url: `${siteConfig.url}/img/logo-lavaplus-original.png`,
-        width: 1024,
-        height: 1024,
-        alt: `${siteConfig.name} - Servicio Profesional con Delivery en Los Ángeles`,
-        type: 'image/png',
-      }
-    ],
+      images: [defaultOgImage],
     phoneNumbers: siteConfig.contact.phones.map(p => p.number),
     emails: [siteConfig.contact.email],
   },
-  twitter: {
-    card: "summary_large_image",
+    twitter: {
+      card: "summary_large_image",
     title: `${siteConfig.name} Los Ángeles | Delivery & Convenios Empresariales`,
     description: `Lavandería profesional en Los Ángeles con servicio de delivery a domicilio y convenios corporativos. +${siteConfig.business.yearsOfExperience} años de experiencia.`,
-    images: [`${siteConfig.url}/img/logo-lavaplus-original.png`],
+      images: [defaultOgImage.url],
     creator: siteConfig.social.twitter,
     site: siteConfig.social.twitter,
   },
-  robots: {
-    index: true,
-    follow: true,
+    robots: {
+      index: true,
+      follow: true,
     googleBot: {
       index: true,
       follow: true,
@@ -85,10 +95,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "tu-codigo-de-verificacion-google",
-  },
-};
+    verification: {
+      google: "tu-codigo-de-verificacion-google",
+    },
+  };
+}
 
 export default function RootLayout({
   children,
