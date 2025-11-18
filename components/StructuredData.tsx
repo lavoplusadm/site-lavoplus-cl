@@ -125,7 +125,7 @@ export default function StructuredData() {
         "name": "¿Cuál es el horario de atención?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `Atendemos de ${siteConfig.hours.weekdays.days} de ${siteConfig.hours.weekdays.display} y ${siteConfig.hours.saturday.days} de ${siteConfig.hours.saturday.display}}.`
+          "text": `Atendemos de ${siteConfig.hours.weekdays.days} de ${siteConfig.hours.weekdays.display} y ${siteConfig.hours.saturday.days} de ${siteConfig.hours.saturday.display}.`
         }
       },
       {
@@ -166,6 +166,57 @@ export default function StructuredData() {
       },
       "query-input": "required name=search_term_string"
     }
+  };
+
+  const deliveryHowToSteps = [
+    {
+      position: 1,
+      name: "Agenda tu recogida",
+      text: "Contáctanos por WhatsApp o teléfono y elige el día y hora para que retiremos tu ropa.",
+    },
+    {
+      position: 2,
+      name: "Recolección y presupuesto",
+      text: "Nuestro equipo retira tus prendas, las pesa y te envía el presupuesto con el detalle del servicio.",
+    },
+    {
+      position: 3,
+      name: "Lavado profesional",
+      text: "Procesamos tus prendas con detergentes premium, agua tratada y equipos industriales.",
+    },
+    {
+      position: 4,
+      name: "Entrega a domicilio",
+      text: "Coordinamos la entrega en la fecha acordada y recibes tu ropa doblada y lista para usar.",
+    },
+  ];
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo funciona el delivery de Lavoplus",
+    "description": "Guía paso a paso para agendar, procesar y recibir tu servicio de lavandería con delivery en Los Ángeles.",
+    "totalTime": "PT24H",
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Bolsa o canasto con tus prendas"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "WhatsApp o teléfono"
+      }
+    ],
+    "image": getSiteUrl(siteConfig.images.ogImage.url),
+    "step": deliveryHowToSteps.map(step => ({
+      "@type": "HowToStep",
+      "position": step.position,
+      "name": step.name,
+      "text": step.text,
+      "image": getSiteUrl(siteConfig.images.ogImage.url)
+    }))
   };
 
   // Review Schemas - Individual reviews with proper itemReviewed structure
@@ -215,6 +266,10 @@ export default function StructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       {reviewSchemas.map((reviewSchema, index) => (
         <script
