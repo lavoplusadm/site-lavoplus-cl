@@ -12,18 +12,23 @@ import { generateAllSchemas } from "@/lib/seo";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: 'swap', // Optimización: mostrar fuente de fallback mientras carga
+  display: "swap", // Optimización: mostrar fuente de fallback mientras carga
   preload: true,
-  fallback: ['system-ui', 'arial'],
+  fallback: ["system-ui", "arial"],
   adjustFontFallback: true, // Ajustar métricas de fuente fallback
 });
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = headers();
-  const forwardedHost = headersList.get('x-forwarded-host');
-  const host = forwardedHost ?? headersList.get('host') ?? new URL(siteConfig.url).host;
-  const forwardedProto = headersList.get('x-forwarded-proto');
-  const protocol = forwardedProto ?? (host?.includes('localhost') || host?.includes('127.0.0.1') ? 'http' : 'https');
+  const forwardedHost = headersList.get("x-forwarded-host");
+  const host =
+    forwardedHost ?? headersList.get("host") ?? new URL(siteConfig.url).host;
+  const forwardedProto = headersList.get("x-forwarded-proto");
+  const protocol =
+    forwardedProto ??
+    (host?.includes("localhost") || host?.includes("127.0.0.1")
+      ? "http"
+      : "https");
   const baseUrl = `${protocol}://${host}`;
 
   const metadataBase = new URL(baseUrl);
@@ -32,69 +37,69 @@ export async function generateMetadata(): Promise<Metadata> {
     width: siteConfig.images.ogImage.width,
     height: siteConfig.images.ogImage.height,
     alt: siteConfig.images.ogImage.alt,
-    type: 'image/webp' as const,
+    type: "image/webp" as const,
   };
 
   return {
     title: {
       default: `${siteConfig.name} Los Ángeles | Delivery & Convenios Empresariales`,
-      template: `%s | ${siteConfig.name} Los Ángeles`
+      template: `%s | ${siteConfig.name} Los Ángeles`,
     },
     description: siteConfig.description,
     keywords: [...siteConfig.keywords],
-  authors: [{ name: siteConfig.name }],
-  creator: siteConfig.name,
-  publisher: siteConfig.name,
+    authors: [{ name: siteConfig.name }],
+    creator: siteConfig.name,
+    publisher: siteConfig.name,
     metadataBase,
-  icons: {
-    icon: [
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.ico', sizes: '32x32' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    shortcut: '/favicon.ico',
-  },
-  alternates: {
-    canonical: "/",
-    languages: {
-      'es-CL': '/',
+    icons: {
+      icon: [
+        { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon.ico", sizes: "32x32" },
+      ],
+      apple: [
+        { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      ],
+      shortcut: "/favicon.ico",
     },
-  },
-  category: 'business',
-  classification: 'Servicios de Lavandería',
+    alternates: {
+      canonical: "/",
+      languages: {
+        "es-CL": "/",
+      },
+    },
+    category: "business",
+    classification: "Servicios de Lavandería",
     openGraph: {
       title: `${siteConfig.name} Los Ángeles | Delivery & Convenios Empresariales`,
-    description: `Lavandería profesional en ${siteConfig.address.city}, ${siteConfig.address.region} con +${siteConfig.business.yearsOfExperience} años de experiencia. Servicio de delivery a domicilio y convenios corporativos. Lavado por kilo, lavado en seco, planchado.`,
-    url: siteConfig.url,
-    siteName: siteConfig.name,
-    locale: "es_CL",
-    type: "website",
+      description: `Lavandería profesional en ${siteConfig.address.city}, ${siteConfig.address.region} con +${siteConfig.business.yearsOfExperience} años de experiencia. Servicio de delivery a domicilio y convenios corporativos. Lavado por kilo, lavado en seco, planchado.`,
+      url: siteConfig.url,
+      siteName: siteConfig.name,
+      locale: "es_CL",
+      type: "website",
       images: [defaultOgImage],
-    phoneNumbers: siteConfig.contact.phones.map(p => p.number),
-    emails: [siteConfig.contact.email],
-  },
+      phoneNumbers: siteConfig.contact.phones.map((p) => p.number),
+      emails: [siteConfig.contact.email],
+    },
     twitter: {
       card: "summary_large_image",
-    title: `${siteConfig.name} Los Ángeles | Delivery & Convenios Empresariales`,
-    description: `Lavandería profesional en Los Ángeles con servicio de delivery a domicilio y convenios corporativos. +${siteConfig.business.yearsOfExperience} años de experiencia.`,
+      title: `${siteConfig.name} Los Ángeles | Delivery & Convenios Empresariales`,
+      description: `Lavandería profesional en Los Ángeles con servicio de delivery a domicilio y convenios corporativos. +${siteConfig.business.yearsOfExperience} años de experiencia.`,
       images: [defaultOgImage.url],
-    creator: siteConfig.social.twitter,
-    site: siteConfig.social.twitter,
-  },
+      creator: siteConfig.social.twitter,
+      site: siteConfig.social.twitter,
+    },
     robots: {
       index: true,
       follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
     verification: {
       google: "tu-codigo-de-verificacion-google",
     },
