@@ -63,13 +63,6 @@ export default function StructuredData() {
       siteConfig.social.instagram
     ],
     "description": siteConfig.description,
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": siteConfig.business.rating.value,
-      "bestRating": siteConfig.business.rating.maxRating,
-      "worstRating": "1",
-      "reviewCount": siteConfig.business.rating.count
-    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Servicios de Lavandería",
