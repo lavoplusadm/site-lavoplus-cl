@@ -1,4 +1,5 @@
 import { siteConfig, getSiteUrl } from "@/config/site";
+import testimonialsData from "@/data/testimonials.json";
 
 export default function StructuredData() {
   // LocalBusiness Schema
@@ -174,6 +175,36 @@ export default function StructuredData() {
     }
   };
 
+  // Review Schemas - Individual reviews with proper itemReviewed structure
+  const reviewSchemas = testimonialsData.testimonials.map((testimonial) => ({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "LocalBusiness",
+      "@id": `${siteConfig.url}/#business`,
+      "name": siteConfig.name,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": siteConfig.address.street,
+        "addressLocality": siteConfig.address.city,
+        "addressRegion": siteConfig.address.region,
+        "addressCountry": siteConfig.address.countryCode
+      }
+    },
+    "author": {
+      "@type": "Person",
+      "name": testimonial.name
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": testimonial.rating.toString(),
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": testimonial.text,
+    "datePublished": "2024-01-15"
+  }));
+
   return (
     <>
       <script
@@ -192,6 +223,13 @@ export default function StructuredData() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
+      {reviewSchemas.map((reviewSchema, index) => (
+        <script
+          key={`review-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+        />
+      ))}
     </>
   );
 }

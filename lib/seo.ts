@@ -146,6 +146,7 @@ export function generateLocalBusinessSchema() {
       ratingValue: siteConfig.business.rating.value,
       reviewCount: siteConfig.business.rating.count,
       bestRating: siteConfig.business.rating.maxRating,
+      worstRating: '1',
     },
     paymentAccepted: siteConfig.business.paymentMethods.join(', '),
     currenciesAccepted: siteConfig.business.currency,
@@ -285,6 +286,45 @@ export function generateWebSiteSchema() {
         urlTemplate: `${siteConfig.url}/precios?q={search_term_string}`,
       },
       'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
+/**
+ * Genera JSON-LD para Review
+ */
+export function generateReviewSchema(review: {
+  author: string;
+  datePublished: string;
+  reviewBody: string;
+  ratingValue: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'LocalBusiness',
+      '@id': getSiteUrl('/#organization'),
+      name: siteConfig.name,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: siteConfig.address.street,
+        addressLocality: siteConfig.address.city,
+        addressRegion: siteConfig.address.region,
+        addressCountry: siteConfig.address.countryCode,
+      },
+    },
+    author: {
+      '@type': 'Person',
+      name: review.author,
+    },
+    datePublished: review.datePublished,
+    reviewBody: review.reviewBody,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: review.ratingValue,
+      bestRating: '5',
+      worstRating: '1',
     },
   };
 }
