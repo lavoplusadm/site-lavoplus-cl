@@ -86,10 +86,10 @@ export const siteConfig = {
     logoBlue: "/img/logo-lavoplus-azul.png",
     logoGoogle: "/img/logo-lavaplus-google.webp",
     ogImage: {
-      url: "/img/logo-lavaplus-google.webp",
-      width: 1024,
-      height: 1024,
-      alt: "Lavandería Lavoplus - Logo Oficial",
+      url: "/img/og-image-1200x630.png",
+      width: 1200,
+      height: 630,
+      alt: "Lavandería Lavoplus Los Ángeles - Servicio Profesional de Lavandería con Delivery",
     },
   },
 

@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
     width: siteConfig.images.ogImage.width,
     height: siteConfig.images.ogImage.height,
     alt: siteConfig.images.ogImage.alt,
-    type: "image/webp" as const,
+    type: "image/png" as const,
   };
 
   return {

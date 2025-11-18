@@ -36,6 +36,7 @@ export function generateMetadata({
     ? `${title} | ${siteConfig.name}`
     : `${siteConfig.name} Los Ángeles | Delivery & Convenios Empresariales`;
 
+  // Ensure absolute URLs for OG image
   const ogImageData = ogImage || {
     url: getSiteUrl(siteConfig.images.ogImage.url),
     width: siteConfig.images.ogImage.width,
@@ -43,20 +44,25 @@ export function generateMetadata({
     alt: siteConfig.images.ogImage.alt,
   };
 
+  // Ensure absolute canonical URL
+  const absoluteCanonical = canonical?.startsWith('http')
+    ? canonical
+    : getSiteUrl(canonical || '/');
+
   return {
     title: pageTitle,
     description,
     keywords: [...siteConfig.keywords, ...keywords],
     alternates: {
-      canonical: canonical || '/',
+      canonical: absoluteCanonical,
       languages: {
-        'es-CL': canonical || '/',
+        'es-CL': absoluteCanonical,
       },
     },
     openGraph: {
       title: pageTitle,
       description,
-      url: getSiteUrl(canonical || '/'),
+      url: absoluteCanonical,
       siteName: siteConfig.name,
       locale: 'es_CL',
       type: 'website',
