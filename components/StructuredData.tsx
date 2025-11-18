@@ -9,10 +9,11 @@ export default function StructuredData() {
     "name": siteConfig.name,
     "alternateName": siteConfig.alternateName,
     "image": [
+      getSiteUrl(siteConfig.images.logoGoogle),
       getSiteUrl(siteConfig.images.logo),
       getSiteUrl(siteConfig.images.logoBlue)
     ],
-    "logo": getSiteUrl(siteConfig.images.logo),
+    "logo": getSiteUrl(siteConfig.images.logoGoogle),
     "url": siteConfig.url,
     "telephone": siteConfig.contact.phones.map(p => p.number),
     "email": siteConfig.contact.email,
@@ -92,7 +93,7 @@ export default function StructuredData() {
     "@id": `${siteConfig.url}/#organization`,
     "name": siteConfig.name,
     "url": siteConfig.url,
-    "logo": getSiteUrl(siteConfig.images.logo),
+    "logo": getSiteUrl(siteConfig.images.logoGoogle),
     "foundingDate": siteConfig.business.foundingYear,
     "description": siteConfig.description,
     "contactPoint": {
