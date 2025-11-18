@@ -32,13 +32,6 @@ export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = `${protocol}://${host}`;
 
   const metadataBase = new URL(baseUrl);
-  const defaultOgImage = {
-    url: `${siteConfig.url}${siteConfig.images.ogImage.url}`,
-    width: siteConfig.images.ogImage.width,
-    height: siteConfig.images.ogImage.height,
-    alt: siteConfig.images.ogImage.alt,
-    type: "image/png" as const,
-  };
 
   return {
     title: {
@@ -77,7 +70,6 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: siteConfig.name,
       locale: "es_CL",
       type: "website",
-      images: [defaultOgImage],
       phoneNumbers: siteConfig.contact.phones.map((p) => p.number),
       emails: [siteConfig.contact.email],
     },
@@ -85,7 +77,6 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: `${siteConfig.name} Los Ángeles | Delivery & Convenios Empresariales`,
       description: `Lavandería profesional en Los Ángeles con servicio de delivery a domicilio y convenios corporativos. +${siteConfig.business.yearsOfExperience} años de experiencia.`,
-      images: [defaultOgImage.url],
       creator: siteConfig.social.twitter,
       site: siteConfig.social.twitter,
     },
