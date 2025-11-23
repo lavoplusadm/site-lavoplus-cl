@@ -47,6 +47,7 @@ export default function HeroCarouselToggle() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isEnhanced, setIsEnhanced] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -98,6 +99,23 @@ export default function HeroCarouselToggle() {
     return () => clearInterval(timer);
   }, [isPaused, isEnhanced]);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    const updateMatch = (event: MediaQueryList | MediaQueryListEvent) => setIsMobile(event.matches);
+
+    updateMatch(mediaQuery);
+
+    const listener = (event: MediaQueryListEvent) => updateMatch(event);
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', listener);
+      return () => mediaQuery.removeEventListener('change', listener);
+    }
+
+    mediaQuery.addListener(listener);
+    return () => mediaQuery.removeListener(listener);
+  }, []);
+
   if (slides.length <= 1) return null;
 
   return (
@@ -108,6 +126,8 @@ export default function HeroCarouselToggle() {
           // Skip first slide (index 0) as it's rendered by HeroImage
           if (index === 0 || (!isEnhanced && index > 0)) return null;
 
+          const imageSrc = isMobile && slide.imageMobile ? slide.imageMobile : slide.image;
+
           return (
             <div
               key={slide.id}
@@ -116,7 +136,7 @@ export default function HeroCarouselToggle() {
               }`}
             >
               <Image
-                src={slide.image}
+                src={imageSrc}
                 alt={slide.alt}
                 fill
                 loading="lazy"
