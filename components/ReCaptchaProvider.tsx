@@ -21,8 +21,9 @@ export default function ReCaptchaProvider({ children }: ReCaptchaProviderProps) 
       scriptProps={{
         async: true,
         defer: true,
-        appendTo: 'head',
+        appendTo: 'body',
       }}
+      useRecaptchaNet={true}
     >
       {children}
     </GoogleReCaptchaProvider>

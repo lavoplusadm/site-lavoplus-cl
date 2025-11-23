@@ -20,7 +20,7 @@ export default function HeroImage() {
           loading="eager"
           className="object-cover object-center"
           sizes="100vw"
-          quality={90}
+          quality={75}
         />
         <div className="absolute inset-0 pointer-events-none">
           <div

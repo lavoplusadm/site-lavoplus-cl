@@ -1,7 +1,8 @@
-'use client';
-
 import { getWhatsAppLink } from '@/config/site';
 
+/**
+ * Server component - no JS needed for a simple link
+ */
 export default function FloatingWhatsApp() {
   const message = 'Hola, quiero más información sobre los servicios de Lavoplus';
 
