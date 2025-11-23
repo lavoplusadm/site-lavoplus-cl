@@ -28,6 +28,7 @@ export function middleware(request: NextRequest) {
     "https://www.google.com",
     "https://www.gstatic.com",
     "https://www.googletagmanager.com",
+    "https://www.recaptcha.net",
   ].join(' ');
 
   const csp = [
@@ -36,8 +37,8 @@ export function middleware(request: NextRequest) {
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "font-src 'self' https://fonts.gstatic.com data:",
     "img-src 'self' data: https: blob:",
-    "connect-src 'self' ws: wss: https://www.google.com https://recaptchaenterprise.googleapis.com https://api.resend.com",
-    "frame-src 'self' https://www.google.com https://www.google.com.mx https://maps.google.com",
+    "connect-src 'self' ws: wss: https://www.google.com https://www.recaptcha.net https://recaptchaenterprise.googleapis.com https://api.resend.com",
+    "frame-src 'self' https://www.google.com https://www.google.com.mx https://maps.google.com https://www.recaptcha.net",
     "object-src 'none'",
     "base-uri 'self'",
     "form-action 'self'",
