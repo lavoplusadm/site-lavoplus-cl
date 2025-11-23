@@ -108,6 +108,22 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        {/* Preload LCP image for faster initial paint */}
+        <link
+          rel="preload"
+          as="image"
+          href="/banner/lavoplus-lavanderia-premium-desktop.webp"
+          type="image/webp"
+          media="(min-width: 768px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/banner/lavoplus-lavanderia-premium-mobile.webp"
+          type="image/webp"
+          media="(max-width: 767px)"
+        />
+
         {/* Preconnect to external origins for faster resource loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
