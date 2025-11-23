@@ -112,9 +112,9 @@ export default function Delivery() {
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent-yellow to-accent-orange text-brand-navy flex items-center justify-center text-2xl font-bold mb-4 shadow-lg">
                     {item.step}
                   </div>
-                  <h4 className="text-xl font-bold text-brand-navy mb-2">
+                  <p className="text-xl font-bold text-brand-navy mb-2">
                     {item.title}
-                  </h4>
+                  </p>
                   <p className="text-neutral-600">
                     {item.description}
                   </p>

@@ -8,7 +8,7 @@ import { siteConfig } from '@/config/site';
 
 // Metadata optimizada para SEO local - Homepage
 export const metadata: Metadata = {
-  title: 'Lavandería en Los Ángeles | Lavoplus | Lavado por Kilo, Seco y Delivery',
+  title: 'Lavandería en Los Ángeles | Lavoplus Delivery',
   description: `Lavandería profesional en Los Ángeles, Bío-Bío. Servicio de lavado por kilo, lavado en seco, planchado y delivery a domicilio para familias y empresas. ${siteConfig.business.yearsOfExperience} años cuidando tus prendas con productos premium.`,
   keywords: [
     'lavandería Los Ángeles',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     ...siteConfig.keywords,
   ],
   alternates: {
-    canonical: '/',
+    canonical: siteConfig.url,
   },
   openGraph: {
     title: 'Lavandería Profesional en Los Ángeles | Lavoplus',

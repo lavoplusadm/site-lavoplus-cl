@@ -68,7 +68,7 @@ export default function Coverage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {logistics.map((logistic) => (
                 <div key={logistic.title} className="rounded-2xl border border-blue-100 bg-white p-6 shadow">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">{logistic.title}</h4>
+                  <p className="text-lg font-semibold text-gray-900 mb-3">{logistic.title}</p>
                   <ul className="space-y-2 text-gray-600">
                     {logistic.items.map((item) => (
                       <li key={item} className="flex items-start">
@@ -92,7 +92,7 @@ export default function Coverage() {
                 href="#contacto"
                 className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-blue-600 hover:bg-blue-50 transition"
               >
-                Solicitar cobertura
+                Consultar disponibilidad en mi zona
               </a>
             </div>
           </div>

@@ -119,7 +119,7 @@ function ContactForm() {
                 <svg className="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <h4 className="text-xl font-bold text-green-800 mb-2">¡Mensaje Enviado!</h4>
+                <p className="text-xl font-bold text-green-800 mb-2">¡Mensaje Enviado!</p>
                 <p className="text-green-600">Nos pondremos en contacto contigo pronto.</p>
               </div>
             ) : (
@@ -263,7 +263,7 @@ function ContactForm() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-900">Dirección</h4>
+                    <p className="text-lg font-semibold text-gray-900">Dirección</p>
                     <p className="text-gray-600">{siteConfig.address.street}<br />{siteConfig.address.city}, {siteConfig.address.region}, {siteConfig.address.country}</p>
                   </div>
                 </div>
@@ -275,7 +275,7 @@ function ContactForm() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-900">Teléfono</h4>
+                    <p className="text-lg font-semibold text-gray-900">Teléfono</p>
                     {siteConfig.contact.phones.map((phone, index) => (
                       <p key={index} className="text-gray-600">
                         <a href={`tel:${phone.number}`} className="hover:text-blue-600 transition">{phone.display}</a>
@@ -291,7 +291,7 @@ function ContactForm() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-900">Email</h4>
+                    <p className="text-lg font-semibold text-gray-900">Email</p>
                     <p className="text-gray-600">
                       <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-blue-600 transition">{siteConfig.contact.email}</a>
                     </p>
@@ -305,7 +305,7 @@ function ContactForm() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-900">Horario</h4>
+                    <p className="text-lg font-semibold text-gray-900">Horario</p>
                     <p className="text-gray-600">{siteConfig.hours.weekdays.days}: {siteConfig.hours.weekdays.display}</p>
                     <p className="text-gray-600">{siteConfig.hours.saturday.days}: {siteConfig.hours.saturday.display}</p>
                   </div>

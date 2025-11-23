@@ -88,9 +88,9 @@ export default function CorporatePartnerships() {
                 className="bg-gradient-to-br from-accent-yellow/10 to-white p-6 rounded-xl border-2 border-accent-yellow/30 hover:border-accent-orange hover:shadow-lg transition-all duration-300 hover:-translate-y-1 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] max-w-md"
               >
                 <div className="text-4xl mb-3">{item.icon}</div>
-                <h4 className="text-lg font-bold text-brand-navy mb-2">
+                <p className="text-lg font-bold text-brand-navy mb-2">
                   {item.title}
-                </h4>
+                </p>
                 <p className="text-neutral-600 text-sm">
                   {item.description}
                 </p>
