@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import heroData from '@/data/hero.json';
 
@@ -47,28 +47,6 @@ export default function HeroCarouselToggle() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isEnhanced, setIsEnhanced] = useState(false);
-  const [stableHeight, setStableHeight] = useState<number | null>(null);
-  const measurementRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  const measureHeights = useCallback(() => {
-    if (typeof window === 'undefined') return;
-
-    const heights = measurementRefs.current.map((ref) => ref?.offsetHeight ?? 0);
-    const maxHeight = heights.length ? Math.max(...heights) : 0;
-    setStableHeight(maxHeight > 0 ? maxHeight : null);
-  }, []);
-
-  useLayoutEffect(() => {
-    if (!isEnhanced) return;
-    measureHeights();
-  }, [measureHeights, isEnhanced]);
-
-  useEffect(() => {
-    if (!isEnhanced) return;
-    const handleResize = () => measureHeights();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [measureHeights, isEnhanced]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -122,8 +100,6 @@ export default function HeroCarouselToggle() {
 
   if (slides.length <= 1) return null;
 
-  measurementRefs.current = measurementRefs.current.slice(0, slides.length);
-
   return (
     <>
       {/* Slide images - positioned absolutely to cover HeroImage */}
@@ -163,7 +139,6 @@ export default function HeroCarouselToggle() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 z-10">
         <div
           className="relative text-white text-center md:text-left flex flex-col gap-8 max-w-4xl lg:max-w-5xl mx-auto md:mx-0 justify-center min-h-[460px] sm:min-h-[420px] md:min-h-[360px]"
-          style={stableHeight ? { height: `${stableHeight}px` } : undefined}
         >
           {isEnhanced && slides.length > 1 && (
             <div className="flex items-center gap-4 justify-center md:justify-start text-white mb-6">
@@ -214,28 +189,6 @@ export default function HeroCarouselToggle() {
               </div>
             );
           })}
-          {isEnhanced && (
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 opacity-0"
-              style={{ visibility: 'hidden' }}
-            >
-              {slides.map((slide, index) => {
-                const highlightTextClass = slide.highlightColor ?? 'text-blue-200';
-                return (
-                  <div
-                    key={`measure-${slide.id}`}
-                    ref={(el) => {
-                      measurementRefs.current[index] = el;
-                    }}
-                    className="flex flex-col gap-8"
-                  >
-                    <SlideCopy slide={slide} highlightClass={highlightTextClass} cta={cta} />
-                  </div>
-                );
-              })}
-            </div>
-          )}
         </div>
       </div>
     </>
