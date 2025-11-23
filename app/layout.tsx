@@ -107,6 +107,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.google.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.recaptcha.net" crossOrigin="anonymous" />
 
         {/* JSON-LD Structured Data for SEO */}
         {schemas.map((schema, index) => (

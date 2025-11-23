@@ -11,7 +11,7 @@
         "line2": "tu ropa impecable, nuestro compromiso"
       },
       "description": "Lavandería profesional en Los Ángeles, Región del Bío Bío, con más de 5 años de experiencia. Cuidamos cada prenda como si fuera nuestra, utilizando productos de primera calidad.",
-      "gradient": "from-blue-900/85 via-blue-800/75 to-blue-900/90",
+      "gradient": "from-slate-900/85 via-slate-800/70 to-slate-900/90",
       "highlightColor": "text-blue-200"
     },
 
@@ -40,7 +40,7 @@
         "line2": "tus prendas siempre limpias"
       },
       "description": "Recogemos y entregamos tu ropa limpia en la puerta de tu hogar u oficina en Los Ángeles con horarios flexibles y seguimiento en tiempo real.",
-      "gradient": "from-emerald-900/85 via-emerald-800/75 to-emerald-900/90",
+      "gradient": "from-slate-900/85 via-slate-800/70 to-slate-900/90",
       "highlightColor": "text-emerald-200"
     }
   ],
