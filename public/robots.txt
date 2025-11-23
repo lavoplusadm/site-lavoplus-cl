@@ -3,10 +3,11 @@
 
 User-agent: *
 Allow: /
+Allow: /manifest.json
 Disallow: /api/
 Disallow: /_next/static/
-Allow: /manifest.json
 Disallow: /*.json$
+Crawl-delay: 1
 
 # Sitemap
 Sitemap: https://lavoplus.cl/sitemap.xml
@@ -32,10 +33,6 @@ Crawl-delay: 10
 User-agent: SemrushBot
 Allow: /
 Crawl-delay: 10
-
-# Crawl-delay general para otros bots
-User-agent: *
-Crawl-delay: 1
 
 # Disallow para bots maliciosos/spam
 User-agent: DotBot
