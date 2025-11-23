@@ -138,18 +138,23 @@ export default function Hero() {
   };
 
   return (
-    <section
-      id="inicio"
-      className="relative mt-24 md:mt-28 overflow-hidden min-h-[600px] sm:min-h-[650px] md:min-h-[700px]"
-      aria-labelledby="hero-heading"
-    >
+    <>
+      {/* Additional slides overlay (slide 0 is rendered by HeroImage server component) */}
       <div className="absolute inset-0 -z-10">
         {slides.map((slide, index) => {
-          // First slide uses picture element for immediate LCP without JS dependency
-          const isFirstSlide = index === 0;
-          const imageSrc = isFirstSlide
-            ? slide.image // Always use desktop for first slide to avoid JS dependency
-            : (isMobile && slide.imageMobile ? slide.imageMobile : slide.image);
+          // Skip first slide as it's rendered by HeroImage server component
+          if (index === 0) {
+            return (
+              <div
+                key={slide.id}
+                className={`absolute inset-0 transition-opacity duration-[1200ms] ease-out ${
+                  currentSlide === 0 ? 'opacity-100 z-10' : 'opacity-0'
+                }`}
+              />
+            );
+          }
+
+          const imageSrc = isMobile && slide.imageMobile ? slide.imageMobile : slide.image;
 
           return (
           <div
@@ -162,8 +167,7 @@ export default function Hero() {
               src={imageSrc}
               alt={slide.alt}
               fill
-              priority={isFirstSlide}
-              loading={isFirstSlide ? "eager" : "lazy"}
+              loading="lazy"
               className="object-cover object-center"
               sizes="100vw"
               quality={90}
@@ -251,7 +255,7 @@ export default function Hero() {
           ))}
         </div>
       </div>
-    </section>
+    </>
   );
 }
 

@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
+import HeroImage from '@/components/HeroImage';
 import Services from '@/components/Services';
 import StructuredData from '@/components/StructuredData';
 import { siteConfig } from '@/config/site';
@@ -62,7 +63,14 @@ export default function Home() {
       <div className="min-h-screen">
         <Navigation />
         <main>
-          <Hero />
+          {/* Hero section with server-rendered LCP image for faster paint */}
+          <section
+            id="inicio"
+            className="relative mt-24 md:mt-28 overflow-hidden min-h-[600px] sm:min-h-[650px] md:min-h-[700px]"
+          >
+            <HeroImage />
+            <Hero />
+          </section>
           <Services />
           <CorporatePartnerships />
           <Delivery />
