@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
-import Hero from '@/components/Hero';
 import HeroImage from '@/components/HeroImage';
 import Services from '@/components/Services';
 import StructuredData from '@/components/StructuredData';
@@ -56,6 +55,11 @@ const Contact = dynamic(() => import('@/components/Contact'), {
 
 const Footer = dynamic(() => import('@/components/Footer'));
 
+const HeroCarouselToggle = dynamic(() => import('@/components/HeroCarouselToggle'), {
+  ssr: false,
+  loading: () => null,
+});
+
 export default function Home() {
   return (
     <>
@@ -69,7 +73,7 @@ export default function Home() {
             className="relative mt-24 md:mt-28 overflow-hidden min-h-[600px] sm:min-h-[650px] md:min-h-[700px]"
           >
             <HeroImage />
-            <Hero />
+            <HeroCarouselToggle />
           </section>
           <Services />
           <CorporatePartnerships />

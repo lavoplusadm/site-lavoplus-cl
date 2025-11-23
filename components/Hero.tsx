@@ -1,12 +1,4 @@
-import dynamic from 'next/dynamic';
 import heroData from '@/data/hero.json';
-
-const HeroCarouselToggle = dynamic(() => import('./HeroCarouselToggle'), {
-  ssr: false,
-  loading: () => null,
-});
-
-type Slide = (typeof heroData.slides)[number];
 
 const primarySlide = heroData.slides?.[0];
 
@@ -20,7 +12,6 @@ export default function Hero() {
     primary: { text: 'Ver Servicios', link: '#servicios' },
     secondary: { text: 'Contáctanos', link: '#contacto' },
   };
-  const hasMoreSlides = (heroData.slides?.length ?? 0) > 1;
 
   return (
     <>
@@ -62,12 +53,6 @@ export default function Hero() {
               {cta.secondary.text}
             </a>
           </div>
-
-          {hasMoreSlides && (
-            <div className="pt-6">
-              <HeroCarouselToggle />
-            </div>
-          )}
         </div>
       </div>
     </>

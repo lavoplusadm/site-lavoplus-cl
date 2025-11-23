@@ -10,7 +10,7 @@ export default function HeroImage() {
   if (!firstSlide) return null;
 
   return (
-    <div className="absolute inset-0 -z-10">
+    <div className="absolute inset-0 z-0">
       <div className="absolute inset-0">
         <Image
           src={firstSlide.image}
@@ -24,7 +24,7 @@ export default function HeroImage() {
         />
         <div className="absolute inset-0 pointer-events-none">
           <div
-            className={`absolute inset-0 bg-gradient-to-br from-blue-900/85 via-blue-800/75 to-blue-900/90 mix-blend-multiply opacity-90`}
+            className={`absolute inset-0 bg-gradient-to-br ${firstSlide.gradient ?? 'from-blue-900/85 via-blue-800/75 to-blue-900/90'} mix-blend-multiply opacity-90`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/35 to-transparent" />
           <div className="absolute inset-0 bg-white/15 mix-blend-screen" />
