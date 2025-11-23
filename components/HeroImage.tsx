@@ -9,11 +9,13 @@ export default function HeroImage() {
 
   if (!firstSlide) return null;
 
+  const heroSrc = firstSlide.imageMobile ?? firstSlide.image;
+
   return (
     <div className="absolute inset-0 z-0">
       <div className="absolute inset-0">
         <Image
-          src={firstSlide.image}
+          src={heroSrc}
           alt={firstSlide.alt}
           fill
           priority

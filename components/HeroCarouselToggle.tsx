@@ -99,7 +99,12 @@ export default function HeroCarouselToggle() {
   }, [isEnhanced]);
 
   useEffect(() => {
-    if (!isEnhanced || isPaused || slides.length <= 1) return;
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!isEnhanced || isPaused || slides.length <= 1 || prefersReducedMotion) return;
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -152,7 +157,7 @@ export default function HeroCarouselToggle() {
           return (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
+              className={`absolute inset-0 transition-opacity duration-700 ease-out will-change-[opacity] ${
                 index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
             >
