@@ -41,9 +41,16 @@ const GRADIENT_SAFELIST = [
  * Carousel toggle component - loaded dynamically after initial render
  * Automatically cycles through all slides including the first one
  */
+type IdleEnhancerWindow = Window &
+  typeof globalThis & {
+    requestIdleCallback?: (callback: () => void) => number;
+    cancelIdleCallback?: (handle: number) => void;
+  };
+
 export default function HeroCarouselToggle() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isEnhanced, setIsEnhanced] = useState(false);
   const [stableHeight, setStableHeight] = useState<number | null>(null);
   const measurementRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -56,24 +63,39 @@ export default function HeroCarouselToggle() {
   }, []);
 
   useLayoutEffect(() => {
+    if (!isEnhanced) return;
     measureHeights();
-  }, [measureHeights]);
+  }, [measureHeights, isEnhanced]);
 
   useEffect(() => {
+    if (!isEnhanced) return;
     const handleResize = () => measureHeights();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [measureHeights]);
+  }, [measureHeights, isEnhanced]);
 
   useEffect(() => {
-    if (isPaused || slides.length <= 1) return;
+    if (typeof window === 'undefined') return;
+    const idleWindow = window as IdleEnhancerWindow;
+
+    if (idleWindow.requestIdleCallback) {
+      const id = idleWindow.requestIdleCallback(() => setIsEnhanced(true));
+      return () => idleWindow.cancelIdleCallback?.(id);
+    }
+
+    const timeout = window.setTimeout(() => setIsEnhanced(true), 500);
+    return () => window.clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    if (!isEnhanced || isPaused || slides.length <= 1) return;
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [isPaused]);
+  }, [isPaused, isEnhanced]);
 
   if (slides.length <= 1) return null;
 
@@ -85,7 +107,7 @@ export default function HeroCarouselToggle() {
       <div className="absolute inset-0 z-[5]">
         {slides.map((slide, index) => {
           // Skip first slide (index 0) as it's rendered by HeroImage
-          if (index === 0) return null;
+          if (index === 0 || (!isEnhanced && index > 0)) return null;
 
           const gradientClass =
             (typeof slide.gradient === 'string' &&
@@ -128,7 +150,7 @@ export default function HeroCarouselToggle() {
           className="relative text-white text-center md:text-left flex flex-col gap-8 max-w-4xl lg:max-w-5xl mx-auto md:mx-0 justify-center min-h-[460px] sm:min-h-[420px] md:min-h-[360px]"
           style={stableHeight ? { height: `${stableHeight}px` } : undefined}
         >
-          {slides.length > 1 && (
+          {isEnhanced && slides.length > 1 && (
             <div className="flex items-center gap-4 justify-center md:justify-start text-white mb-6">
               <div className="flex gap-2">
                 {slides.map((_, index) => (
@@ -162,6 +184,7 @@ export default function HeroCarouselToggle() {
             </div>
           )}
           {slides.map((slide, index) => {
+            if (!isEnhanced && index > 0) return null;
             const highlightTextClass = slide.highlightColor ?? 'text-blue-200';
             return (
               <div
@@ -176,27 +199,28 @@ export default function HeroCarouselToggle() {
               </div>
             );
           })}
-          {/* Hidden measurement elements to stabilize height */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 opacity-0"
-            style={{ visibility: 'hidden' }}
-          >
-            {slides.map((slide, index) => {
-              const highlightTextClass = slide.highlightColor ?? 'text-blue-200';
-              return (
-                <div
-                  key={`measure-${slide.id}`}
-                  ref={(el) => {
-                    measurementRefs.current[index] = el;
-                  }}
-                  className="flex flex-col gap-8"
-                >
-                  <SlideCopy slide={slide} highlightClass={highlightTextClass} cta={cta} />
-                </div>
-              );
-            })}
-          </div>
+          {isEnhanced && (
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-0"
+              style={{ visibility: 'hidden' }}
+            >
+              {slides.map((slide, index) => {
+                const highlightTextClass = slide.highlightColor ?? 'text-blue-200';
+                return (
+                  <div
+                    key={`measure-${slide.id}`}
+                    ref={(el) => {
+                      measurementRefs.current[index] = el;
+                    }}
+                    className="flex flex-col gap-8"
+                  >
+                    <SlideCopy slide={slide} highlightClass={highlightTextClass} cta={cta} />
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </div>
     </>
