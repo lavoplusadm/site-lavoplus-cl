@@ -5,12 +5,12 @@
       "image": "/banner/lavoplus-lavanderia-premium.webp",
       "imageMobile": "/banner/lavoplus-lavanderia-premium.webp",
       "alt": "Lavandería Lavoplus en Los Ángeles - Servicio profesional de lavado por kilo y lavado en seco",
-      "badge": "Lavandería profesional en Los Ángeles",
+      "badge": "Lavoplus - Lavandería en Los Ángeles",
       "title": {
-        "line1": "Lavandería en Los Ángeles:",
-        "line2": "tu ropa impecable, nuestro compromiso"
+        "line1": "Lavandería en Los Ángeles",
+        "line2": "con delivery a domicilio"
       },
-      "description": "Más de 5 años cuidando las prendas de familias y empresas en la Región del Bío Bío. Ofrecemos lavado por kilo, lavado en seco y planchado profesional con productos de primera calidad.",
+      "description": "Lavoplus: más de 5 años cuidando las prendas de familias y empresas en la Región del Bío Bío. Lavado por kilo, lavado en seco y planchado profesional con productos premium. Tu ropa impecable es nuestro compromiso.",
       "gradient": "from-slate-900/85 via-slate-800/70 to-slate-900/90",
       "highlightColor": "text-blue-200"
     },

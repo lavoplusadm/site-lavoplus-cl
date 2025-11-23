@@ -91,9 +91,9 @@ export default function Quality() {
                 <span className="inline-flex items-center rounded-full bg-accent-yellow/30 text-brand-navy px-4 py-2 text-xs font-semibold uppercase tracking-wide mb-4">
                   Producto Exclusivo
                 </span>
-                <h4 className="text-2xl md:text-3xl font-bold text-brand-navy leading-snug mb-4">
+                <p className="text-2xl md:text-3xl font-bold text-brand-navy leading-snug mb-4">
                   {qualityData.detergentPromo.headline}
-                </h4>
+                </p>
                 <p className="text-neutral-600 text-lg leading-relaxed mb-6">
                   {qualityData.detergentPromo.description}
                 </p>

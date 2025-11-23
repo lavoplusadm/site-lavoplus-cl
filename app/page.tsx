@@ -9,7 +9,7 @@ import { siteConfig } from '@/config/site';
 // Metadata optimizada para SEO local - Homepage
 export const metadata: Metadata = {
   title: 'Lavandería en Los Ángeles | Lavoplus Delivery',
-  description: `Lavandería profesional en Los Ángeles, Bío-Bío. Servicio de lavado por kilo, lavado en seco, planchado y delivery a domicilio para familias y empresas. ${siteConfig.business.yearsOfExperience} años cuidando tus prendas con productos premium.`,
+  description: 'Lavandería Lavoplus en Los Ángeles: lavado por kilo, lavado en seco y delivery a domicilio. Más de 5 años de experiencia. ¡Cotiza gratis!',
   keywords: [
     'lavandería Los Ángeles',
     'lavandería en Los Ángeles Chile',

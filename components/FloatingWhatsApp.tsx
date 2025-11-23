@@ -12,6 +12,7 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chatear por WhatsApp"
+      title="Escríbenos por WhatsApp"
       className="fixed right-6 bottom-6 z-50 inline-flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-xl border-2 border-green-400 hover:scale-110 transition-transform focus:outline-none focus:ring-4 focus:ring-green-300/60"
     >
       <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
