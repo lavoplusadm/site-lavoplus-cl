@@ -20,7 +20,7 @@ export default function HeroImage() {
           fill
           priority
           loading="eager"
-          className="object-cover object-center"
+          className="object-cover object-[50%_25%]"
           sizes="100vw"
           quality={70}
         />

@@ -183,78 +183,85 @@ export default function HeroCarouselToggle() {
 
       {/* Text content that changes with slides */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 z-10">
-        <div
-          className="relative text-white text-center md:text-left flex flex-col gap-8 max-w-4xl lg:max-w-5xl mx-auto md:mx-0 justify-center min-h-[460px] sm:min-h-[420px] md:min-h-[360px]"
-          style={stableHeight ? { height: `${stableHeight}px` } : undefined}
-        >
-          {isEnhanced && slides.length > 1 && (
-            <div className="flex items-center gap-4 justify-center md:justify-start text-white mb-6">
-              <div className="flex gap-2">
-                {slides.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`transition-all duration-300 rounded-full ${
-                      currentSlide === index
-                        ? 'w-10 h-3 bg-white shadow-lg'
-                        : 'w-3 h-3 bg-white/50 hover:bg-white/70'
-                    }`}
-                    aria-label={`Ir al slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-              <button
-                onClick={() => setIsPaused((prev) => !prev)}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition-all hover:bg-white/20"
-                aria-label={isPaused ? 'Reanudar' : 'Pausar'}
-              >
-                {isPaused ? (
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                ) : (
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-                  </svg>
-                )}
-              </button>
+        <div className="relative text-white text-center md:text-left max-w-4xl lg:max-w-5xl mx-auto md:mx-0">
+          {/* Carousel controls - always reserve space to prevent layout shift */}
+          <div className={`flex items-center gap-4 justify-center md:justify-start text-white mb-6 h-10 ${
+            isEnhanced && slides.length > 1 ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}>
+            <div className="flex gap-2">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`transition-all duration-300 rounded-full ${
+                    currentSlide === index
+                      ? 'w-10 h-3 bg-white shadow-lg'
+                      : 'w-3 h-3 bg-white/50 hover:bg-white/70'
+                  }`}
+                  aria-label={`Ir al slide ${index + 1}`}
+                />
+              ))}
             </div>
-          )}
-          {slides.map((slide, index) => {
-            if (!isEnhanced && index > 0) return null;
-            const highlightTextClass = slide.highlightColor ?? 'text-blue-200';
-            return (
-              <div
-                key={slide.id}
-                className={`transition-opacity duration-1000 flex flex-col gap-8 ${
-                  index === currentSlide
-                    ? 'opacity-100 relative'
-                    : 'opacity-0 absolute inset-0 pointer-events-none'
-                }`}
-              >
-                <SlideCopy slide={slide} highlightClass={highlightTextClass} cta={cta} />
-              </div>
-            );
-          })}
+            <button
+              onClick={() => setIsPaused((prev) => !prev)}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition-all hover:bg-white/20"
+              aria-label={isPaused ? 'Reanudar' : 'Pausar'}
+            >
+              {isPaused ? (
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                </svg>
+              )}
+            </button>
+          </div>
+
+          {/* Slides container with stable height */}
           <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 opacity-0"
-            style={{ visibility: 'hidden' }}
+            className="relative"
+            style={stableHeight ? { minHeight: `${stableHeight}px` } : undefined}
           >
             {slides.map((slide, index) => {
+              if (!isEnhanced && index > 0) return null;
               const highlightTextClass = slide.highlightColor ?? 'text-blue-200';
+              const isActive = index === currentSlide;
               return (
                 <div
-                  key={`measure-${slide.id}`}
-                  ref={(el) => {
-                    measurementRefs.current[index] = el;
-                  }}
-                  className="flex flex-col gap-8"
+                  key={slide.id}
+                  className={`flex flex-col gap-8 transition-opacity duration-700 ${
+                    isActive
+                      ? 'opacity-100'
+                      : 'opacity-0 absolute inset-0 pointer-events-none'
+                  }`}
                 >
                   <SlideCopy slide={slide} highlightClass={highlightTextClass} cta={cta} />
                 </div>
               );
             })}
+            {/* Hidden measurement container */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute top-0 left-0 right-0 opacity-0"
+              style={{ visibility: 'hidden' }}
+            >
+              {slides.map((slide, index) => {
+                const highlightTextClass = slide.highlightColor ?? 'text-blue-200';
+                return (
+                  <div
+                    key={`measure-${slide.id}`}
+                    ref={(el) => {
+                      measurementRefs.current[index] = el;
+                    }}
+                    className="flex flex-col gap-8"
+                  >
+                    <SlideCopy slide={slide} highlightClass={highlightTextClass} cta={cta} />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
