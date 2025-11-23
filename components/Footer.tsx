@@ -12,10 +12,10 @@ export default function Footer() {
           <div>
             <div className="mb-2">
               <Image
-                src="/img/logo-lavaplus-original-blanco.png"
+                src="/img/logo-lavaplus-original-blanco-200.webp"
                 alt={siteConfig.name}
-                width={300}
-                height={100}
+                width={200}
+                height={200}
                 className="h-auto w-40 object-contain scale-125"
               />
             </div>
