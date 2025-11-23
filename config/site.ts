@@ -7,7 +7,7 @@ export const siteConfig = {
   // Información básica
   name: "Lavandería Lavoplus",
   alternateName: "Lavoplus Los Ángeles",
-  description: "Lavandería profesional en Los Ángeles, Región del Bío Bío con más de 5 años de experiencia. Ofrecemos lavado por kilo, lavado en seco, planchado y servicio express con productos premium.",
+  description: "Lavandería profesional en Los Ángeles, Región del Bío Bío. Servicio de lavado por kilo, lavado en seco, planchado profesional y delivery a domicilio para familias y empresas. Más de 5 años cuidando tus prendas con productos de primera calidad.",
 
   // URLs
   url: "https://lavoplus.cl",
@@ -97,55 +97,77 @@ export const siteConfig = {
   keywords: [
     // Keywords principales transaccionales
     "lavandería Los Ángeles",
+    "lavanderia Los Angeles",
     "lavandería en Los Ángeles Chile",
+    "lavanderia en Los Angeles Chile",
     "lavado por kilo Los Ángeles",
+    "lavado por kilo Los Angeles",
     "lavandería a domicilio Los Ángeles",
+    "lavanderia a domicilio Los Angeles",
     "lavandería delivery Los Ángeles",
+    "lavanderia delivery Los Angeles",
     "lavado en seco Los Ángeles",
     // Keywords secundarias
     "lavado de plumones Los Ángeles",
+    "lavado de plumones Los Angeles",
     "lavandería express Los Ángeles",
+    "lavanderia express Los Angeles",
     "lavandería Bío Bío",
     "planchado profesional Los Ángeles",
+    "planchado profesional Los Angeles",
     "lavandería Lavoplus",
+    "lavanderia Lavoplus",
     "servicio de lavandería",
+    "servicio de lavanderia",
     "lavado por kilo",
     "delivery lavandería",
+    "delivery lavanderia",
     "recogida domicilio",
     // Keywords comerciales/empresariales
     "convenios empresariales lavandería",
+    "convenios empresariales lavanderia",
     "lavado uniformes Los Ángeles",
+    "lavado uniformes Los Angeles",
     "lavandería corporativa",
+    "lavanderia corporativa",
     "lavandería hoteles Los Ángeles",
+    "lavanderia hoteles Los Angeles",
     "lavandería clínicas",
+    "lavanderia clinicas",
     // Keywords de intención local
     "lavandería cerca de mí",
+    "lavanderia cerca de mi",
     "lavado Ropa Cama",
     "servicio express lavandería",
+    "servicio express lavanderia",
     "lavandería ropa delicada",
+    "lavanderia ropa delicada Los Angeles",
+    "lavado ropa delicada Los Ángeles",
+    "precios lavandería Los Ángeles",
+    "precios lavanderia Los Angeles",
   ],
 
   // Servicios principales
   services: [
     {
       name: "Lavado por Kilo",
-      description: "Lavado tradicional de ropa por kilogramo con detergentes premium",
+      description: "Ideal para ropa de uso diario. Lavamos, secamos y doblamos tu ropa con detergentes premium que cuidan los tejidos",
     },
     {
       name: "Lavado en Seco",
-      description: "Servicio especializado para prendas delicadas",
+      description: "Para prendas delicadas, trajes, vestidos y ropa que requiere cuidado especial sin agua",
     },
     {
       name: "Planchado Profesional",
-      description: "Servicio de planchado profesional con equipos de última generación",
+      description: "Camisas, blusas y ropa formal lista para usar con acabado impecable",
     },
     {
-      name: "Servicio Express",
-      description: "Lavado y entrega el mismo día para emergencias",
+      name: "Lavado de Plumones y Edredones",
+      description: "Limpieza profunda de ropa de cama, frazadas y cobertores con secado especializado",
     },
     {
       name: "Delivery a Domicilio",
-      description: "Servicio de recolección y entrega a domicilio en Los Ángeles",
+      description: "Recogemos y entregamos tu ropa en tu hogar u oficina en Los Ángeles con horarios flexibles",
     },
   ],
 

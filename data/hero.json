@@ -4,13 +4,13 @@
       "id": "lavado-premium",
       "image": "/banner/lavoplus-lavanderia-premium.webp",
       "imageMobile": "/banner/lavoplus-lavanderia-premium.webp",
-      "alt": "Lavandería Lavoplus en Los Ángeles - Servicio de lavado premium de prendas",
-      "badge": "Lavandería premium en Los Ángeles",
+      "alt": "Lavandería Lavoplus en Los Ángeles - Servicio profesional de lavado por kilo y lavado en seco",
+      "badge": "Lavandería profesional en Los Ángeles",
       "title": {
         "line1": "Lavandería en Los Ángeles:",
         "line2": "tu ropa impecable, nuestro compromiso"
       },
-      "description": "Lavandería profesional en Los Ángeles, Región del Bío Bío, con más de 5 años de experiencia. Cuidamos cada prenda como si fuera nuestra, utilizando productos de primera calidad.",
+      "description": "Más de 5 años cuidando las prendas de familias y empresas en la Región del Bío Bío. Ofrecemos lavado por kilo, lavado en seco y planchado profesional con productos de primera calidad.",
       "gradient": "from-slate-900/85 via-slate-800/70 to-slate-900/90",
       "highlightColor": "text-blue-200"
     },
@@ -19,13 +19,13 @@
       "id": "empresas",
       "image": "/banner/convenio-empresa.webp",
       "imageMobile": "/banner/convenio-empresa-mobile.webp",
-      "alt": "Convenios empresariales de lavandería en Los Ángeles - Lavoplus",
-      "badge": "Soluciones corporativas",
+      "alt": "Convenios empresariales de lavandería en Los Ángeles - Lavado de uniformes y ropa corporativa",
+      "badge": "Convenios para empresas",
       "title": {
         "line1": "Nos encargamos del lavado,",
         "line2": "tú de hacer crecer tu negocio"
       },
-      "description": "Soluciones de lavandería premium para empresas en Los Ángeles. Retiramos, lavamos y entregamos tus prendas impecables, con atención rápida y tarifas preferenciales.",
+      "description": "Lavandería corporativa para hoteles, clínicas y empresas en Los Ángeles. Lavado de uniformes, manteles y ropa de cama con retiro y entrega programada, tarifas preferenciales y facturación mensual.",
       "gradient": "from-slate-900/85 via-slate-800/70 to-slate-900/90",
       "highlightColor": "text-slate-200"
     },
@@ -33,13 +33,13 @@
       "id": "delivery",
       "image": "/banner/delivery-ropa.webp",
       "imageMobile": "/banner/delivery-ropa-mobile.webp",
-      "alt": "Delivery de lavandería a domicilio en Los Ángeles - Lavoplus",
-      "badge": "Delivery en Los Ángeles",
+      "alt": "Servicio de lavandería a domicilio en Los Ángeles - Delivery y recogida de ropa",
+      "badge": "Delivery a domicilio",
       "title": {
         "line1": "Sin salir de casa,",
         "line2": "tus prendas siempre limpias"
       },
-      "description": "Recogemos y entregamos tu ropa limpia en la puerta de tu hogar u oficina en Los Ángeles con horarios flexibles y seguimiento en tiempo real.",
+      "description": "Servicio de lavandería a domicilio en Los Ángeles. Recogemos tu ropa, la lavamos con productos premium y la entregamos en tu hogar u oficina con horarios flexibles.",
       "gradient": "from-slate-900/85 via-slate-800/70 to-slate-900/90",
       "highlightColor": "text-emerald-200"
     }

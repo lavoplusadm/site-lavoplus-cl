@@ -19,8 +19,8 @@ export default function Services() {
         <SectionHeader
           badge="Servicios Profesionales"
           badgeVariant="yellow"
-          title="Nuestros Servicios"
-          description="Ofrecemos una amplia gama de servicios de lavandería para satisfacer todas tus necesidades"
+          title="Servicios de Lavandería en Los Ángeles"
+          description="Lavado por kilo, lavado en seco, planchado profesional y lavandería express a domicilio en la Región del Bío Bío."
         />
 
         <div className="flex flex-wrap justify-center gap-8">

@@ -9,7 +9,7 @@ import { siteConfig } from '@/config/site';
 // Metadata optimizada para SEO local - Homepage
 export const metadata: Metadata = {
   title: 'Lavandería en Los Ángeles | Lavoplus | Lavado por Kilo, Seco y Delivery',
-  description: `Lavandería Lavoplus en Los Ángeles, Bío-Bío. Lavado por kilo, lavado en seco, planchado, ropa de cama y delivery a domicilio. Más de ${siteConfig.business.yearsOfExperience} años de experiencia cuidando tus prendas.`,
+  description: `Lavandería profesional en Los Ángeles, Bío-Bío. Servicio de lavado por kilo, lavado en seco, planchado y delivery a domicilio para familias y empresas. ${siteConfig.business.yearsOfExperience} años cuidando tus prendas con productos premium.`,
   keywords: [
     'lavandería Los Ángeles',
     'lavandería en Los Ángeles Chile',
@@ -19,14 +19,18 @@ export const metadata: Metadata = {
     'lavado en seco Los Ángeles',
     'lavado de plumones Los Ángeles',
     'lavandería express Los Ángeles',
+    'lavado ropa de cama Los Ángeles',
+    'lavandería cerca de mí',
+    'convenios lavandería empresas',
+    'lavado uniformes Los Ángeles',
     ...siteConfig.keywords,
   ],
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Lavandería en Los Ángeles | Lavoplus | Lavado por Kilo, Seco y Delivery',
-    description: `Lavandería profesional en Los Ángeles, Región del Bío Bío con más de ${siteConfig.business.yearsOfExperience} años de experiencia. Servicio de delivery a domicilio y convenios corporativos.`,
+    title: 'Lavandería Profesional en Los Ángeles | Lavoplus',
+    description: `Servicio de lavandería para familias y empresas en Los Ángeles, Bío-Bío. Lavado por kilo, lavado en seco, planchado profesional y delivery a domicilio. Convenios corporativos disponibles.`,
     url: siteConfig.url,
     type: 'website',
   },

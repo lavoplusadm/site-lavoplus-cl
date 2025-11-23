@@ -4,8 +4,17 @@ import { useState } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import Select from './Select';
 import { siteConfig, getPrimaryPhone } from '@/config/site';
+import ReCaptchaProvider from './ReCaptchaProvider';
 
 export default function Contact() {
+  return (
+    <ReCaptchaProvider>
+      <ContactForm />
+    </ReCaptchaProvider>
+  );
+}
+
+function ContactForm() {
   const { executeRecaptcha } = useGoogleReCaptcha();
   const primaryPhone = getPrimaryPhone();
   const [formData, setFormData] = useState({

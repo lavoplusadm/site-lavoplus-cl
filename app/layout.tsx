@@ -4,7 +4,6 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import BackToTop from "@/components/BackToTop";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import ReCaptchaProvider from "@/components/ReCaptchaProvider";
 import WebVitals from "@/components/WebVitals";
 import { generateAllSchemas } from "@/lib/seo";
 
@@ -26,11 +25,13 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name} Los Ángeles`,
   },
   description: siteConfig.description,
+  applicationName: siteConfig.name,
   keywords: [...siteConfig.keywords],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
   metadataBase: new URL(siteUrl),
+  themeColor: "#2563eb",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -90,6 +91,11 @@ export const metadata: Metadata = {
     google: "tu-codigo-de-verificacion-google",
   },
   manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: siteConfig.name,
+  },
 };
 
 export default function RootLayout({
@@ -109,23 +115,25 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.recaptcha.net" crossOrigin="anonymous" />
 
-        {/* JSON-LD Structured Data for SEO */}
-        {schemas.map((schema, index) => (
-          <script
-            key={index}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-          />
-        ))}
-      </head>
-      <body className={`${inter.variable} antialiased`}>
-        <WebVitals />
-        <ReCaptchaProvider>
-          {children}
-          <BackToTop />
-          <FloatingWhatsApp />
-        </ReCaptchaProvider>
-      </body>
-    </html>
-  );
+      {/* JSON-LD Structured Data for SEO */}
+      {schemas.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+        <meta name="application-name" content={siteConfig.name} />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="theme-color" content="#2563eb" />
+    </head>
+    <body className={`${inter.variable} antialiased`}>
+      <WebVitals />
+      {children}
+      <BackToTop />
+      <FloatingWhatsApp />
+    </body>
+  </html>
+);
 }

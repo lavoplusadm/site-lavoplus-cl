@@ -31,11 +31,7 @@ const defaultCTA: HeroCTA = {
 };
 const cta: HeroCTA = (heroData.cta as HeroCTA | undefined) ?? defaultCTA;
 
-const GRADIENT_SAFELIST = [
-  'from-blue-900/85 via-blue-800/75 to-blue-900/90',
-  'from-slate-900/85 via-slate-800/70 to-slate-900/90',
-  'from-emerald-900/85 via-emerald-800/75 to-emerald-900/90',
-] as const;
+const HERO_GRADIENT = 'from-slate-900/85 via-slate-800/70 to-slate-900/90';
 
 /**
  * Carousel toggle component - loaded dynamically after initial render
@@ -76,16 +72,43 @@ export default function HeroCarouselToggle() {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    if (isEnhanced) return;
+
     const idleWindow = window as IdleEnhancerWindow;
+    let idleHandle: number | undefined;
+    let timeoutHandle: number | undefined;
+
+    const enable = () => setIsEnhanced(true);
+
+    const interactionHandler = () => {
+      enable();
+      window.removeEventListener('pointerdown', interactionHandler);
+      window.removeEventListener('keydown', interactionHandler);
+      window.removeEventListener('touchstart', interactionHandler);
+    };
+
+    window.addEventListener('pointerdown', interactionHandler, { once: true });
+    window.addEventListener('touchstart', interactionHandler, { once: true });
+    window.addEventListener('keydown', interactionHandler, { once: true });
 
     if (idleWindow.requestIdleCallback) {
-      const id = idleWindow.requestIdleCallback(() => setIsEnhanced(true));
-      return () => idleWindow.cancelIdleCallback?.(id);
+      idleHandle = idleWindow.requestIdleCallback(enable);
+    } else {
+      timeoutHandle = window.setTimeout(enable, 1000);
     }
 
-    const timeout = window.setTimeout(() => setIsEnhanced(true), 500);
-    return () => window.clearTimeout(timeout);
-  }, []);
+    return () => {
+      window.removeEventListener('pointerdown', interactionHandler);
+      window.removeEventListener('touchstart', interactionHandler);
+      window.removeEventListener('keydown', interactionHandler);
+      if (idleHandle) {
+        idleWindow.cancelIdleCallback?.(idleHandle);
+      }
+      if (timeoutHandle) {
+        window.clearTimeout(timeoutHandle);
+      }
+    };
+  }, [isEnhanced]);
 
   useEffect(() => {
     if (!isEnhanced || isPaused || slides.length <= 1) return;
@@ -109,11 +132,6 @@ export default function HeroCarouselToggle() {
           // Skip first slide (index 0) as it's rendered by HeroImage
           if (index === 0 || (!isEnhanced && index > 0)) return null;
 
-          const gradientClass =
-            (typeof slide.gradient === 'string' &&
-              GRADIENT_SAFELIST.find((allowed) => allowed === slide.gradient)) ??
-            GRADIENT_SAFELIST[0];
-
           return (
             <div
               key={slide.id}
@@ -132,12 +150,9 @@ export default function HeroCarouselToggle() {
               />
               <div className="absolute inset-0 pointer-events-none">
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${
-                    gradientClass
-                  } mix-blend-multiply opacity-90`}
+                  className={`absolute inset-0 bg-gradient-to-br ${HERO_GRADIENT} mix-blend-multiply opacity-90`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/35 to-transparent" />
-                <div className="absolute inset-0 bg-white/15 mix-blend-screen" />
               </div>
             </div>
           );
