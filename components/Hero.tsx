@@ -144,7 +144,14 @@ export default function Hero() {
       aria-labelledby="hero-heading"
     >
       <div className="absolute inset-0 -z-10">
-        {slides.map((slide, index) => (
+        {slides.map((slide, index) => {
+          // First slide uses picture element for immediate LCP without JS dependency
+          const isFirstSlide = index === 0;
+          const imageSrc = isFirstSlide
+            ? slide.image // Always use desktop for first slide to avoid JS dependency
+            : (isMobile && slide.imageMobile ? slide.imageMobile : slide.image);
+
+          return (
           <div
             key={slide.id}
             className={`absolute inset-0 transition-opacity duration-[1200ms] ease-out ${
@@ -152,11 +159,11 @@ export default function Hero() {
             }`}
           >
             <Image
-              src={isMobile && slide.imageMobile ? slide.imageMobile : slide.image}
+              src={imageSrc}
               alt={slide.alt}
               fill
-              priority={index === 0}
-              loading={index === 0 ? "eager" : "lazy"}
+              priority={isFirstSlide}
+              loading={isFirstSlide ? "eager" : "lazy"}
               className="object-cover object-center"
               sizes="100vw"
               quality={90}
@@ -171,7 +178,8 @@ export default function Hero() {
               <div className="absolute inset-0 bg-white/15 mix-blend-screen" />
             </div>
           </div>
-        ))}
+        );
+        })}
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
