@@ -5,6 +5,7 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/static/
+Allow: /manifest.json
 Disallow: /*.json$
 
 # Sitemap
