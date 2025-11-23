@@ -5,12 +5,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date()
 
   return [
+    // Página principal
     {
       url: getSiteUrl('/'),
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 1,
     },
+    // Páginas informativas
     {
       url: getSiteUrl('/nosotros'),
       lastModified: currentDate,

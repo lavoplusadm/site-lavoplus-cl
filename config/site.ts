@@ -55,12 +55,12 @@ export const siteConfig = {
     weekdays: {
       days: "Lunes a Viernes",
       open: "09:00",
-      close: "19:00",
+      close: "19:30",
       display: "9:00 AM - 7:30 PM",
     },
     saturday: {
       days: "Sábado",
-      open: "08:00",
+      open: "09:00",
       close: "14:00",
       display: "9:00 AM - 2:00 PM",
     }
@@ -82,36 +82,47 @@ export const siteConfig = {
 
   // Imágenes
   images: {
-    logo: "/img/logo-lavaplus-original.png",
+    logo: "/img/logo-lavaplus-original.webp",
     logoBlue: "/img/logo-lavoplus-azul.png",
     logoGoogle: "/img/logo-lavaplus-google.webp",
     ogImage: {
-      url: "/img/logo-lavaplus-original.png",
+      url: "/img/logo-lavaplus-original.webp",
       width: 1200,
       height: 630,
       alt: "Lavandería Lavoplus Los Ángeles - Identidad visual",
     },
   },
 
-  // SEO Keywords
+  // SEO Keywords - Optimizadas para búsquedas locales
   keywords: [
+    // Keywords principales transaccionales
     "lavandería Los Ángeles",
-    "lavandería Bío Bío",
-    "lavandería Chile",
+    "lavandería en Los Ángeles Chile",
+    "lavado por kilo Los Ángeles",
+    "lavandería a domicilio Los Ángeles",
+    "lavandería delivery Los Ángeles",
     "lavado en seco Los Ángeles",
-    "planchado profesional",
+    // Keywords secundarias
+    "lavado de plumones Los Ángeles",
+    "lavandería express Los Ángeles",
+    "lavandería Bío Bío",
+    "planchado profesional Los Ángeles",
     "lavandería Lavoplus",
     "servicio de lavandería",
     "lavado por kilo",
     "delivery lavandería",
     "recogida domicilio",
-    "convenios empresariales",
-    "lavado uniformes",
+    // Keywords comerciales/empresariales
+    "convenios empresariales lavandería",
+    "lavado uniformes Los Ángeles",
     "lavandería corporativa",
+    "lavandería hoteles Los Ángeles",
+    "lavandería clínicas",
+    // Keywords de intención local
     "lavandería cerca de mí",
-    "lavandería 24 horas",
     "lavado Ropa Cama",
     "servicio express lavandería",
+    "lavandería ropa delicada",
   ],
 
   // Servicios principales

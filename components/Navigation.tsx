@@ -26,7 +26,7 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <Image
-                src="/img/logo-lavaplus-original.png"
+                src="/img/logo-lavaplus-original.webp"
                 alt="Lavandería Lavoplus"
                 width={600}
                 height={200}

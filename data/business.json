@@ -81,13 +81,13 @@
   ],
   "logo": {
     "default": {
-      "src": "/img/logo-lavaplus-original.png",
+      "src": "/img/logo-lavaplus-original.webp",
       "alt": "Lavandería Lavoplus",
       "width": 600,
       "height": 200
     },
     "white": {
-      "src": "/img/logo-lavaplus-original-blanco.png",
+      "src": "/img/logo-lavaplus-original-blanco.webp",
       "alt": "Lavandería Lavoplus",
       "width": 300,
       "height": 100

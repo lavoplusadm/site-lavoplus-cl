@@ -23,15 +23,25 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# Crawl-delay para bots
-Crawl-delay: 1
-
-# Disallow para bots maliciosos
+# Herramientas SEO permitidas (útiles para análisis de backlinks y competencia)
 User-agent: AhrefsBot
-Disallow: /
+Allow: /
+Crawl-delay: 10
 
 User-agent: SemrushBot
+Allow: /
+Crawl-delay: 10
+
+# Crawl-delay general para otros bots
+User-agent: *
+Crawl-delay: 1
+
+# Disallow para bots maliciosos/spam
+User-agent: DotBot
 Disallow: /
 
-User-agent: DotBot
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: BLEXBot
 Disallow: /

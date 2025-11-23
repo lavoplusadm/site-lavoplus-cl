@@ -95,6 +95,9 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     verification: {
+      // TODO: Reemplazar con el código real de Google Search Console
+      // Obtenerlo en: https://search.google.com/search-console
+      // Ir a Configuración > Verificación de propiedad > Etiqueta HTML
       google: "tu-codigo-de-verificacion-google",
     },
     manifest: "/manifest.json",
