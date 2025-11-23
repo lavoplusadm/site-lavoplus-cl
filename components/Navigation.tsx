@@ -62,13 +62,13 @@ export default function Navigation() {
                       href="/#servicios"
                       className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition"
                     >
-                      Nuestros Servicios
+                      Servicios de Lavandería
                     </Link>
                     <Link
                       href="/precios"
                       className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition"
                     >
-                      Precios por Prenda
+                      Precios y Tarifas
                     </Link>
                   </div>
                 </div>
@@ -134,10 +134,10 @@ export default function Navigation() {
             {servicesDropdownOpen && (
               <div className="ml-4 mt-1 space-y-1">
                 <Link href="/#servicios" className="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" onClick={() => { setIsOpen(false); setServicesDropdownOpen(false); }}>
-                  Nuestros Servicios
+                  Servicios de Lavandería
                 </Link>
                 <Link href="/precios" className="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" onClick={() => { setIsOpen(false); setServicesDropdownOpen(false); }}>
-                  Precios por Prenda
+                  Tarifas de Lavandería
                 </Link>
               </div>
             )}
