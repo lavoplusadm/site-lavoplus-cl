@@ -55,10 +55,7 @@ const Contact = dynamic(() => import('@/components/Contact'), {
 
 const Footer = dynamic(() => import('@/components/Footer'));
 
-const HeroCarouselToggle = dynamic(() => import('@/components/HeroCarouselToggle'), {
-  ssr: false,
-  loading: () => null,
-});
+const HeroCarouselToggle = dynamic(() => import('@/components/HeroCarouselToggle'));
 
 export default function Home() {
   return (
