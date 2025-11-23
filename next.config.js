@@ -23,6 +23,7 @@ const nextConfig = {
   // Optimización de chunks
   experimental: {
     optimizePackageImports: ['react-google-recaptcha-v3', 'validator'],
+    optimizeCss: true, // Optimizar CSS con critters para inline critical CSS
   },
 
   // Headers adicionales de performance

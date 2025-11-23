@@ -114,6 +114,12 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        {/* Preconnect to external origins for faster resource loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
         {/* JSON-LD Structured Data for SEO */}
         {schemas.map((schema, index) => (
           <script

@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import heroData from '@/data/hero.json';
 
@@ -105,7 +105,7 @@ export default function Hero() {
     return () => mediaQuery.removeListener(listener);
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     measureHeights();
   }, [measureHeights]);
 
