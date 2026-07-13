@@ -2,102 +2,10 @@ import { siteConfig, getSiteUrl } from "@/config/site";
 import testimonialsData from "@/data/testimonials.json";
 
 export default function StructuredData() {
-  // LocalBusiness Schema
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LaundryService",
-    "@id": `${siteConfig.url}/#business`,
-    "name": siteConfig.name,
-    "alternateName": siteConfig.alternateName,
-    "image": [
-      getSiteUrl(siteConfig.images.logoGoogle),
-      getSiteUrl(siteConfig.images.logo),
-      getSiteUrl(siteConfig.images.logoBlue)
-    ],
-    "logo": getSiteUrl(siteConfig.images.logoGoogle),
-    "url": siteConfig.url,
-    "telephone": siteConfig.contact.phones.map(p => p.number),
-    "email": siteConfig.contact.email,
-    "priceRange": siteConfig.business.priceRange,
-    "currenciesAccepted": siteConfig.business.currency,
-    "paymentAccepted": siteConfig.business.paymentMethods,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": siteConfig.address.street,
-      "addressLocality": siteConfig.address.city,
-      "addressRegion": siteConfig.address.region,
-      "postalCode": siteConfig.address.postalCode,
-      "addressCountry": siteConfig.address.countryCode
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": siteConfig.geo.latitude,
-      "longitude": siteConfig.geo.longitude
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": siteConfig.serviceArea.city,
-        "containedIn": {
-          "@type": "State",
-          "name": siteConfig.serviceArea.region
-        }
-      }
-    ],
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": siteConfig.hours.weekdays.open,
-        "closes": siteConfig.hours.weekdays.close
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": siteConfig.hours.saturday.open,
-        "closes": siteConfig.hours.saturday.close
-      }
-    ],
-    "sameAs": [
-      siteConfig.social.facebook,
-      siteConfig.social.instagram
-    ],
-    "description": siteConfig.description,
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Servicios de Lavandería",
-      "itemListElement": siteConfig.services.map(service => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": service.name,
-          "description": service.description,
-          "provider": {
-            "@id": `${siteConfig.url}/#business`
-          }
-        }
-      }))
-    }
-  };
-
-  // Organization Schema
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${siteConfig.url}/#organization`,
-    "name": siteConfig.name,
-    "url": siteConfig.url,
-    "logo": getSiteUrl(siteConfig.images.logoGoogle),
-    "foundingDate": siteConfig.business.foundingYear,
-    "description": siteConfig.description,
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": siteConfig.contact.phones[0].number,
-      "contactType": "customer service",
-      "areaServed": siteConfig.address.countryCode,
-      "availableLanguage": ["Spanish"]
-    }
-  };
+  // Nota: los schemas de LaundryService (negocio) y WebSite ya se emiten
+  // sitewide desde app/layout.tsx (ver lib/seo.ts). Este componente solo
+  // agrega el contenido estructurado propio de la home (FAQ, HowTo, Reviews)
+  // para evitar duplicados con el mismo @id.
 
   // FAQ Schema
   const faqSchema = {
@@ -145,27 +53,6 @@ export default function StructuredData() {
         }
       }
     ]
-  };
-
-  // WebSite Schema for search
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${siteConfig.url}/#website`,
-    "url": siteConfig.url,
-    "name": `${siteConfig.name} ${siteConfig.address.city}`,
-    "description": `Lavandería profesional con delivery en ${siteConfig.address.city}, ${siteConfig.address.region}`,
-    "publisher": {
-      "@id": `${siteConfig.url}/#organization`
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${siteConfig.url}/#servicios?q={search_term_string}`
-      },
-      "query-input": "required name=search_term_string"
-    }
   };
 
   const deliveryHowToSteps = [
@@ -224,7 +111,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Review",
     "itemReviewed": {
-      "@type": "LocalBusiness",
+      "@type": "LaundryService",
       "@id": `${siteConfig.url}/#business`,
       "name": siteConfig.name,
       "address": {
@@ -253,19 +140,7 @@ export default function StructuredData() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <script
         type="application/ld+json"

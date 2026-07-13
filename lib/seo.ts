@@ -103,14 +103,18 @@ export function generateMetadata({
 export function generateLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': getSiteUrl('/#organization'),
+    '@type': 'LaundryService',
+    '@id': getSiteUrl('/#business'),
     name: siteConfig.name,
     alternateName: siteConfig.alternateName,
     description: siteConfig.description,
     url: siteConfig.url,
     logo: getSiteUrl(siteConfig.images.logoGoogle),
-    image: getSiteUrl(siteConfig.images.logoGoogle),
+    image: [
+      getSiteUrl(siteConfig.images.logoGoogle),
+      getSiteUrl(siteConfig.images.logo),
+      getSiteUrl(siteConfig.images.logoBlue),
+    ],
     priceRange: siteConfig.business.priceRange,
     telephone: siteConfig.contact.phones[0].number,
     email: siteConfig.contact.email,
@@ -162,6 +166,21 @@ export function generateLocalBusinessSchema() {
       siteConfig.social.facebook,
       siteConfig.social.instagram,
     ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicios de Lavandería',
+      itemListElement: siteConfig.services.map((service) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: service.name,
+          description: service.description,
+          provider: {
+            '@id': getSiteUrl('/#business'),
+          },
+        },
+      })),
+    },
   };
 }
 
@@ -277,7 +296,7 @@ export function generateWebSiteSchema() {
     name: siteConfig.name,
     description: siteConfig.description,
     publisher: {
-      '@id': getSiteUrl('/#organization'),
+      '@id': getSiteUrl('/#business'),
     },
     potentialAction: {
       '@type': 'SearchAction',
@@ -303,8 +322,8 @@ export function generateReviewSchema(review: {
     '@context': 'https://schema.org',
     '@type': 'Review',
     itemReviewed: {
-      '@type': 'LocalBusiness',
-      '@id': getSiteUrl('/#organization'),
+      '@type': 'LaundryService',
+      '@id': getSiteUrl('/#business'),
       name: siteConfig.name,
       address: {
         '@type': 'PostalAddress',

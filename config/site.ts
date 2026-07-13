@@ -10,8 +10,8 @@ export const siteConfig = {
   description: "Lavandería profesional en Los Ángeles, Región del Bío Bío. Lavado por kilo, en seco, planchado y delivery a domicilio para familias y empresas con más de 5 años de experiencia.",
 
   // URLs
-  url: "https://lavoplus.cl",
-  domain: "lavoplus.cl",
+  url: "https://www.lavoplus.cl",
+  domain: "www.lavoplus.cl",
 
   // Contacto
   contact: {
