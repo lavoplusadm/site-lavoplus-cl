@@ -94,9 +94,65 @@ export default function Footer() {
         {/* Social Media & Copyright */}
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} {siteConfig.name}. Todos los derechos reservados.
-            </p>
+            <div className="mb-4 flex flex-col items-center gap-2 md:mb-0 md:items-start">
+              <p className="text-gray-400 text-sm">
+                &copy; {new Date().getFullYear()} {siteConfig.name}. Todos los derechos reservados.
+              </p>
+              <div className="flex flex-col items-center gap-1 text-gray-500 sm:flex-row sm:gap-3">
+                <span className="whitespace-nowrap text-[12px]">Diseñado y creado por</span>
+                <a
+                  href="mailto:lau.alcealab@gmail.com"
+                  aria-label="Enviar correo a ALCEA LAB"
+                  title="Contactar a ALCEA LAB"
+                  className="rounded-sm transition-opacity duration-200 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                >
+                  <svg
+                    width="240"
+                    height="50"
+                    viewBox="0 0 240 50"
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    aria-label="ALCEA LAB"
+                    className="h-auto w-[80px]"
+                  >
+                    <defs>
+                      <linearGradient id="alceaBrandGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#00C2FF" />
+                        <stop offset="100%" stopColor="#FF4FD8" />
+                      </linearGradient>
+                    </defs>
+
+                    <g transform="translate(0,3)">
+                      <path
+                        d="M8 22 H28 L20 14 L26 8 L40 22 L26 36 L20 30 L28 22"
+                        fill="#16C5E8"
+                      />
+                    </g>
+
+                    <text
+                      x="52"
+                      y="38"
+                      fontFamily="Inter, Arial, sans-serif"
+                      fontSize="34"
+                      fontWeight="800"
+                      fill="#FFFFFF"
+                    >
+                      ALCEA
+                    </text>
+                    <text
+                      x="174"
+                      y="38"
+                      fontFamily="Inter, Arial, sans-serif"
+                      fontSize="34"
+                      fontWeight="800"
+                      fill="url(#alceaBrandGradient)"
+                    >
+                      LAB
+                    </text>
+                  </svg>
+                </a>
+              </div>
+            </div>
             <div className="flex space-x-6">
               <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition" aria-label="Facebook" title="Síguenos en Facebook">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
